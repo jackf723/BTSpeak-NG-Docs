@@ -1,0 +1,6 @@
+[book]
+authors = ["jackf723"]
+language = "en"
+multilingual = false
+src = "src"
+title = "BTSpeak Manual"

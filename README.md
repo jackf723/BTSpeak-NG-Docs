@@ -1,2 +1,1 @@
-# BTSpeak-NG-Docs
- Proposed next generation of the documentaiton for BTSpeak
+Next Generation Manual - Detailed Readme Coming Soon
