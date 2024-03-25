@@ -7,8 +7,8 @@ To switch between eSpeak NG and DECtalk:
 1. Open the options menu and navigate to "System", "System Administration", "Settings", or type O-Chord, S, S, S.
 1. Select "Text to Speech Settings."
 1. Choose from either of the following options:
-  * Use eSpeak NG
-  * Use DECtalk
+    * Use eSpeak NG
+    * Use DECtalk
 
 The change is immediate - you won't need to reboot.
 

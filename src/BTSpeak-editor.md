@@ -128,7 +128,7 @@ The full list of the editor's commands is:
   * Control Z: zap (discard) the current line (or marked region)
   * Control Right Bracket: try to complete the current word
 
-  *Meta A: set the mark at the cursor's position
+  * Meta A: set the mark at the cursor's position
   * Meta B: invoke the linter
   * Meta C: enable/disable always show cursor position
   * Meta D: count the number of words, lines, and characters
