@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Working with the Editor - BTSpeak Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="gettingStarted.html"><strong aria-hidden="true">1.</strong> Getting Started Guide</a></li><li class="chapter-item expanded "><a href="welcome-screen.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="product-description.html"><strong aria-hidden="true">3.</strong> Product Description</a></li><li class="chapter-item expanded "><a href="command-summary.html"><strong aria-hidden="true">4.</strong> Command Summary</a></li><li class="chapter-item expanded "><a href="options-menu.html"><strong aria-hidden="true">5.</strong> Options Menu</a></li><li class="chapter-item expanded "><a href="file-management.html"><strong aria-hidden="true">6.</strong> File Management</a></li><li class="chapter-item expanded "><a href="speech-settings.html"><strong aria-hidden="true">7.</strong> Speech Settings</a></li><li class="chapter-item expanded "><a href="DECtalk.html"><strong aria-hidden="true">8.</strong> DECtalk</a></li><li class="chapter-item expanded "><a href="power-button.html"><strong aria-hidden="true">9.</strong> Power Button</a></li><li class="chapter-item expanded "><a href="review-mode.html"><strong aria-hidden="true">10.</strong> Review Mode</a></li><li class="chapter-item expanded "><a href="BTSpeak-editor.html" class="active"><strong aria-hidden="true">11.</strong> Working with the Editor</a></li><li class="chapter-item expanded "><a href="delete-menu.html"><strong aria-hidden="true">12.</strong> Delete Menu</a></li><li class="chapter-item expanded "><a href="navigation-menu.html"><strong aria-hidden="true">13.</strong> Navigation Menu</a></li><li class="chapter-item expanded "><a href="paste-menu.html"><strong aria-hidden="true">14.</strong> Paste Menu</a></li><li class="chapter-item expanded "><a href="editor-details.html"><strong aria-hidden="true">15.</strong> Editor: Technical Details</a></li><li class="chapter-item expanded "><a href="calculator.html"><strong aria-hidden="true">16.</strong> The Scientific Calculator</a></li><li class="chapter-item expanded "><a href="gregorian-date-calculator.html"><strong aria-hidden="true">17.</strong> gregorian date calculator</a></li><li class="chapter-item expanded "><a href="BTRadio.html"><strong aria-hidden="true">18.</strong> BT Radio</a></li><li class="chapter-item expanded "><a href="stopwatch.html"><strong aria-hidden="true">19.</strong> Stopwatch</a></li><li class="chapter-item expanded "><a href="voiceCommands.html"><strong aria-hidden="true">20.</strong> Voice Commands</a></li><li class="chapter-item expanded "><a href="OpenAI-key.html"><strong aria-hidden="true">21.</strong> OpenAI API Key</a></li><li class="chapter-item expanded "><a href="network-file-sharing.html"><strong aria-hidden="true">22.</strong> Network File Sharing</a></li><li class="chapter-item expanded "><a href="make-third-partition.html"><strong aria-hidden="true">23.</strong> Creating the Public Partition for Network File Sharing</a></li><li class="chapter-item expanded "><a href="desktop-navigation.html"><strong aria-hidden="true">24.</strong> Desktop Navigation - Pro Units</a></li><li class="chapter-item expanded "><a href="desktop-review.html"><strong aria-hidden="true">25.</strong> Desktop Review - Pro Units</a></li><li class="chapter-item expanded "><a href="keyboard-emulation.html"><strong aria-hidden="true">26.</strong> Keyboard Emulation</a></li><li class="chapter-item expanded "><a href="vibration-patterns.html"><strong aria-hidden="true">27.</strong> Vibration Patterns</a></li><li class="chapter-item expanded "><a href="menu-file.html"><strong aria-hidden="true">28.</strong> Menu Customization Files</a></li><li class="chapter-item expanded "><a href="rescue-mode.html"><strong aria-hidden="true">29.</strong> Rescue Mode</a></li><li class="chapter-item expanded "><a href="reset-button.html"><strong aria-hidden="true">30.</strong> Reset Button</a></li><li class="chapter-item expanded "><a href="tests-menu.html"><strong aria-hidden="true">31.</strong> Tests Menu</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">32.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BTSpeak Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="btspeak-editor-help"><a class="header" href="#btspeak-editor-help">BTSpeak Editor Help</a></h2>
+<p>Both the File Management menu <em>(O-Chord M)</em> and the File Browser <em>(O-Chord F)</em> provide these file editing functions:</p>
+<ul>
+<li>O: open an existing file (prompts for name)</li>
+<li>C: create a new file (prompts for name)</li>
+<li>S: save the current file without leaving it</li>
+<li>L: leave the current file after saving any changes</li>
+<li>Q: quit the current file without saving any changes</li>
+</ul>
+<p>Another way to open an existing file is to press Enter when on it in the File Browser.</p>
+<p>The editor's screen has three regions:</p>
+<ul>
+<li>A title bar on the top line; T-Chord navigates to it.</li>
+<li>A status bar on the bottom line; 3-4-Chord (s t) navigates to it.</li>
+<li>An edit area in the middle; E-Chord navigates to it.</li>
+</ul>
+<p>From left to right, the title bar contains:</p>
+<ul>
+<li>Either the word "editing" (you can make changes) or the word "viewing" (you can't make changes) to the file.</li>
+<li>The name of (not the full path to) the file.</li>
+<li>The word "restricted" if the editor is in its restricted mode.</li>
+<li>The phrase "mark set" if the mark has been set.</li>
+<li>The phrase "unsaved changes" if you've made at least one change to the file.</li>
+</ul>
+<p>The edit area is kept blank so that the BTSpeak's own speech mechanism won't be accidentally triggered.
+This is done so that the editor can always be in full control of what gets spoken.</p>
+<p>The status bar is spoken whenever its content changes.
+It's used to display information, warnings, errors, and alerts.
+If there's more than one message to be displayed at the same time then the most important one is chosen.</p>
+<p>The editor has three menus (each of which has its own help file):</p>
+<ul>
+<li>D-Chord: the Delete menu</li>
+<li>N-Chord: the Navigation menu</li>
+<li>P-Chord: the Paste menu</li>
+</ul>
+<p>An editor command is bound to either a Control character or to a Meta character.
+[{control-characters}]
+[{meta-characters}]</p>
+<p>These chords provide easier and more intuitive ways to perform useful editing functions.</p>
+<ul>
+<li>3-4-5-6-Chord (number sign): toggle the showing of line numbers (editor command is Meta N)</li>
+<li>8-Chord: type a "newline" character (editor command is Control M)</li>
+<li>7-Chord: delete the character to the left of the cursor (editor command is Control H)</li>
+<li>2-5-6-Chord (low d): delete the character that the cursor is on (editor command is Control D)</li>
+<li>1-4-Chord: say the current line (editor command is Control Y)</li>
+<li>2-5-Chord: say the current word (editor command is Control V)</li>
+<li>3-6-Chord: say the current character (editor command is Control J)</li>
+<li>1-Chord: go to the previous line (editor command is Arrow-Up)</li>
+<li>4-Chord: go to the next line (editor command is Arrow-Down)</li>
+<li>2-Chord: go to the previous word (editor command is Control B)</li>
+<li>5-Chord: go to the next word (editor command is Control F)</li>
+<li>3-Chord: go to the previous character (editor command is Arrow-Left)</li>
+<li>6-Chord: go to the next character (editor command is Arrow-Right)</li>
+<li>1-3-Chord: go to the first character of the current line (editor command is Control A)</li>
+<li>4-6-Chord: go to the last character of the current line (editor command is Control E)</li>
+<li>1-2-3-Chord: go to the first line of the file (editor command is Meta Backslash)</li>
+<li>4-5-6-Chord: go to the last line of the file (editor command is Meta Slash)</li>
+<li>2-3-Chord: go to the beginning of the previous (or current) block of text (editor command is Meta 7)</li>
+<li>5-6-Chord: go to the beginning of the next block of text (editor command is Meta 8)</li>
+<li>G-Chord: Place/remove an anchor (editor command is Meta X)</li>
+<li>1-2-7-Chord: go to the previous anchor (editor command is Control P)</li>
+<li>4-5-8-Chord: go to the next anchor (editor command is Control N)</li>
+<li>1-3-7-Chord: go to the beginning of the current (or previous) paragraph (editor command is Meta Left Parenthesis)</li>
+<li>4-6-8-Chord: go to the end of the current (or next) paragraph (editor command is Meta Right Parenthesis)</li>
+<li>2-3-7-Chord: switch to the previous open file (editor command is Meta Less Than)</li>
+<li>5-6-8-Chord: switch to the next open file (editor command is Meta Greater Than)</li>
+<li>F-Chord (prompts for text): find forward (editor command is Control W)</li>
+<li>F-7-8-Chord (prompts for text): find backward (editor command is Control Q)</li>
+<li>F-7-Chord: find previous (editor command is Meta Q)</li>
+<li>F-8-Chord: find next (editor command is Meta W)</li>
+<li>M-Chord: set/remove the mark (editor command is Meta A)</li>
+<li>1-2-6-Chord: copy to the clipboard (editor command is Meta 6)</li>
+<li>3-4-6-Chord: paste from the clipboard (editor command is Control U)</li>
+</ul>
+<p>Cutting and copying to, and pasting from, the clipboard can also be performed via the Delete menu (D-chord).
+These operations use the "from to" (rather than the "from through") paradigm, i.e. they're exclusive rather than inclusive.
+This means that the first character is included but that the last character isn't.
+If the cursor is before the mark then the marked character isn't included.
+If the cursor is after the mark then the character under the cursor isn't included.</p>
+<p>Clipboard commands have also been defined for those who are accustomed to using the traditional Control- X, C, and V conventions.
+These are formed by adding 8-Chord to the letter. So:</p>
+<ul>
+<li>M-8-Chord: set the mark</li>
+<li>X-8-Chord: cut to the clipboard</li>
+<li>C-8-Chord: copy to the clipboard</li>
+<li>V-8-Chord: paste from the clipboard</li>
+</ul>
+<p>The full list of the editor's commands is:</p>
+<ul>
+<li>Enter: insert a newline at the cursor's position</li>
+<li>Tab: insert a tab at the cursor's position</li>
+<li>Arrow Left: go back one character</li>
+<li>Arrow Right: go forward one character</li>
+<li>Arrow Up: go up one line</li>
+<li>Arrow Down: go down one line</li>
+<li>Page Up: go up one screenful</li>
+<li>Page Down: go down one screenful</li>
+<li>Home: go to the beginning of the current line</li>
+<li>End: go to the end of the current line</li>
+<li>Insert: paste another file into the current (or a new) file</li>
+<li>Delete: delete the character that the cursor is on</li>
+<li>Backspace: delete the character to the left of the cursor</li>
+<li>Control A: go to the beginning of the current line</li>
+<li>Control B: go back one word</li>
+<li>Control C: show the cursor's position</li>
+<li>Control D: delete the character under the cursor</li>
+<li>Control E: go to the end of the current line</li>
+<li>Control F: go forward one word</li>
+<li>Control G: display help (Control X to exit)</li>
+<li>Control H: delete the character to the left of the cursor</li>
+<li>Control I: insert a tab at the cursor's position</li>
+<li>Control J: say the current character</li>
+<li>Control K: cut the current line (or marked region)</li>
+<li>Control L: refresh (redraw) the screen</li>
+<li>Control M: insert a newline at the cursor's position</li>
+<li>Control N: go to the next anchor (wraps from last to first)</li>
+<li>Control O: save the current file (or marked region)</li>
+<li>Control O twice: quit the current file without saving changes</li>
+<li>Control P: go to the previous anchor (wraps from first to last)</li>
+<li>Control Q: search backward for a string (or regular expression)</li>
+<li>Control R: paste another file into the current (or a new) file</li>
+<li>Control S: save the current file without leaving it</li>
+<li>Control T: insert the output of an editor function or an external command into the current (or a new) file</li>
+<li>Control U: paste the clipboard at the cursor's position</li>
+<li>Control V: say the current word</li>
+<li>Control W: search forward for a string (or regular expression)</li>
+<li>Control X: close the current file (or exit the editor)</li>
+<li>Control Y: say the current line</li>
+<li>Control Z: zap (discard) the current line (or marked region)</li>
+<li>Control Right Bracket: try to complete the current word</li>
+</ul>
+<p>*Meta A: set the mark at the cursor's position</p>
+<ul>
+<li>Meta B: invoke the linter</li>
+<li>Meta C: enable/disable always show cursor position</li>
+<li>Meta D: count the number of words, lines, and characters</li>
+<li>Meta E: redo the last undone operation</li>
+<li>Meta F: invoke the formatter</li>
+<li>Meta G: go to the specified line and column (prompts for line,column numbers)</li>
+<li>Meta H: enable/disable smart home key</li>
+<li>Meta I: enable/disable auto indent</li>
+<li>Meta J: justify the entire file</li>
+<li>Meta K: enable/disable cut from cursor</li>
+<li>Meta L: enable/disable hard wrapping of over-long lines</li>
+<li>Meta M: enable/disable mouse support</li>
+<li>Meta N: enable/disable show line numbers</li>
+<li>Meta O: enable/disable convert typed tabs to spaces</li>
+<li>Meta P: enable/disable show whitespace</li>
+<li>Meta Q: search backward for the next occurrence</li>
+<li>Meta R: replace a string (or regular expression)</li>
+<li>Meta S: enable/disable soft wrapping of over-long lines</li>
+<li>Meta T: cut from the cursor's position to the end of the file</li>
+<li>Meta U: undo the last operation</li>
+<li>Meta V: insert the next keystroke verbatim</li>
+<li>Meta W: search forward for next occurrence</li>
+<li>Meta X: place/remove an anchor at the current line</li>
+<li>Meta Y: enable/disable color syntax highlighting</li>
+<li>Meta Z: invoke the spell checker</li>
+<li>Meta 1: delete backward to the start of the current word</li>
+<li>Meta 2: delete forward to the start of the next word</li>
+<li>Meta 3: comment/uncomment the current line (or marked lines)</li>
+<li>Meta 6: copy the current line (or marked region)</li>
+<li>Meta 7: go to the beginning of the current (or previous) block of text</li>
+<li>Meta 8: go to the beginning of the next block of text</li>
+<li>Meta Left Parenthesis: go to the beginning of the current (or previous) paragraph</li>
+<li>Meta Right Parenthesis: go to the end of the current (or next) paragraph</li>
+<li>Meta Equal: scroll the line with the cursor to the middle of the screen</li>
+<li>Meta Plus: scroll down one line</li>
+<li>Meta Minus: scroll up one line</li>
+<li>Meta Less Than: switch to the previous open file</li>
+<li>Meta Greater Than: switch to the next open file</li>
+<li>Meta Left Brace: unindent the current line (or marked lines)</li>
+<li>Meta Right Brace: indent the current line (or marked lines)</li>
+<li>Meta Right Bracket: go forward/backward to the matching bracket</li>
+<li>Meta Backslash: go to the first line of the file</li>
+<li>Meta Slash: go to the last line of the file</li>
+<li>Meta Colon: start/stop recording a macro</li>
+<li>Meta Semicolon: run the last recorded macro</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="review-mode.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="delete-menu.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="review-mode.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="delete-menu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

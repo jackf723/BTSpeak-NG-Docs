@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Scientific Calculator - BTSpeak Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="gettingStarted.html"><strong aria-hidden="true">1.</strong> Getting Started Guide</a></li><li class="chapter-item expanded "><a href="welcome-screen.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="product-description.html"><strong aria-hidden="true">3.</strong> Product Description</a></li><li class="chapter-item expanded "><a href="command-summary.html"><strong aria-hidden="true">4.</strong> Command Summary</a></li><li class="chapter-item expanded "><a href="options-menu.html"><strong aria-hidden="true">5.</strong> Options Menu</a></li><li class="chapter-item expanded "><a href="file-management.html"><strong aria-hidden="true">6.</strong> File Management</a></li><li class="chapter-item expanded "><a href="speech-settings.html"><strong aria-hidden="true">7.</strong> Speech Settings</a></li><li class="chapter-item expanded "><a href="DECtalk.html"><strong aria-hidden="true">8.</strong> DECtalk</a></li><li class="chapter-item expanded "><a href="power-button.html"><strong aria-hidden="true">9.</strong> Power Button</a></li><li class="chapter-item expanded "><a href="review-mode.html"><strong aria-hidden="true">10.</strong> Review Mode</a></li><li class="chapter-item expanded "><a href="BTSpeak-editor.html"><strong aria-hidden="true">11.</strong> Working with the Editor</a></li><li class="chapter-item expanded "><a href="delete-menu.html"><strong aria-hidden="true">12.</strong> Delete Menu</a></li><li class="chapter-item expanded "><a href="navigation-menu.html"><strong aria-hidden="true">13.</strong> Navigation Menu</a></li><li class="chapter-item expanded "><a href="paste-menu.html"><strong aria-hidden="true">14.</strong> Paste Menu</a></li><li class="chapter-item expanded "><a href="editor-details.html"><strong aria-hidden="true">15.</strong> Editor: Technical Details</a></li><li class="chapter-item expanded "><a href="calculator.html" class="active"><strong aria-hidden="true">16.</strong> The Scientific Calculator</a></li><li class="chapter-item expanded "><a href="gregorian-date-calculator.html"><strong aria-hidden="true">17.</strong> gregorian date calculator</a></li><li class="chapter-item expanded "><a href="BTRadio.html"><strong aria-hidden="true">18.</strong> BT Radio</a></li><li class="chapter-item expanded "><a href="stopwatch.html"><strong aria-hidden="true">19.</strong> Stopwatch</a></li><li class="chapter-item expanded "><a href="voiceCommands.html"><strong aria-hidden="true">20.</strong> Voice Commands</a></li><li class="chapter-item expanded "><a href="OpenAI-key.html"><strong aria-hidden="true">21.</strong> OpenAI API Key</a></li><li class="chapter-item expanded "><a href="network-file-sharing.html"><strong aria-hidden="true">22.</strong> Network File Sharing</a></li><li class="chapter-item expanded "><a href="make-third-partition.html"><strong aria-hidden="true">23.</strong> Creating the Public Partition for Network File Sharing</a></li><li class="chapter-item expanded "><a href="desktop-navigation.html"><strong aria-hidden="true">24.</strong> Desktop Navigation - Pro Units</a></li><li class="chapter-item expanded "><a href="desktop-review.html"><strong aria-hidden="true">25.</strong> Desktop Review - Pro Units</a></li><li class="chapter-item expanded "><a href="keyboard-emulation.html"><strong aria-hidden="true">26.</strong> Keyboard Emulation</a></li><li class="chapter-item expanded "><a href="vibration-patterns.html"><strong aria-hidden="true">27.</strong> Vibration Patterns</a></li><li class="chapter-item expanded "><a href="menu-file.html"><strong aria-hidden="true">28.</strong> Menu Customization Files</a></li><li class="chapter-item expanded "><a href="rescue-mode.html"><strong aria-hidden="true">29.</strong> Rescue Mode</a></li><li class="chapter-item expanded "><a href="reset-button.html"><strong aria-hidden="true">30.</strong> Reset Button</a></li><li class="chapter-item expanded "><a href="tests-menu.html"><strong aria-hidden="true">31.</strong> Tests Menu</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">32.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BTSpeak Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="calculator-help"><a class="header" href="#calculator-help">Calculator Help</a></h2>
+<p>When you enter this general-purpose mathematical calculator, you'll be on its expression prompt.<br />
+Enter whatever you'd like to calculate and press <em>dot 8</em> (which functions as the equals sign).<br />
+You'll then be on the result line.<br />
+You can go down one line with <em>4-Chord</em> to see the expression that was calculated.<br />
+You can then go back up to the result with <em>1-Chord</em>.<br />
+You can dismiss the result and go back to the expression prompt with <em>8</em>.
+Z-Chord, when on the expression prompt, exits the calculator.</p>
+<p>Expressions are entered, with a few exceptions, using Nemeth Code symbols.
+In the following lists, the key being described is shown first, followed by the dots to press to type it.</p>
+<ul>
+<li>the digit 1: 2</li>
+<li>the digit 2: 2-3</li>
+<li>the digit 3: 2-5</li>
+<li>the digit 4: 2-5-6</li>
+<li>the digit 5: 2-6</li>
+<li>the digit 6: 2-3-5</li>
+<li>the digit 7: 2-3-5-6</li>
+<li>the digit 8: 2-3-6</li>
+<li>the digit 9: 3-5</li>
+<li>the digit 0: 3-5-6</li>
+<li>the decimal point: 4-6</li>
+<li>plus: 3-4-6</li>
+<li>minus: 3-6</li>
+<li>times: 1-6</li>
+<li>divide: 3-4</li>
+<li>remainder: 1-4-6</li>
+<li>exponentiate (to the power of): 4-5-7</li>
+<li>left parenthesis: 1-2-3-5-6</li>
+<li>right parenthesis: 2-3-4-5-6</li>
+<li>a space: spacebar</li>
+</ul>
+<p>These key combinations can be used to edit the expression:</p>
+<ul>
+<li>go to the previous character: 3-Chord</li>
+<li>go to the next character: 6-Chord</li>
+<li>go to the first character: 1-3-Chord</li>
+<li>go to the end (just after the last character): 4-6-Chord</li>
+<li>delete the previous character: 7</li>
+<li>delete the current character: 2-5-6-Chord</li>
+<li>delete all of the previous characters: 1-3-6-7-8</li>
+</ul>
+<p>A number must not contain a space and may be entered to any precision both before and after the decimal point.
+The decimal point is optional and is not required if all digits after the point are 0.</p>
+<p>The special variable "last" contains the result of the previous calculation.
+You can define your own variables by entering lines of the form:
+variable = expression</p>
+<p>Standard operator precedence rules are used.
+From highest to lowest:</p>
+<ul>
+<li>a subexpression within parentheses</li>
+<li>negation</li>
+<li>exponentiation</li>
+<li>times, divide, remainder</li>
+<li>plus, minus</li>
+</ul>
+<p>Several scientific constants are available as predefined Variables:</p>
+<ul>
+<li>c       the speed of light - Meters per Second</li>
+<li>e       Euler's Number - The Base for Natural Logarithms</li>
+<li>f       Faraday Constant - Charge per Mole</li>
+<li>g       Gravitational Constant - Cubic Meters per Kilogram per Second per Second</li>
+<li>h       Planck Constant - Joule Seconds</li>
+<li>k       Boltzmann Constant - Joules per Kelvin</li>
+<li>l       Avogadro Constant - per Mole</li>
+<li>r       Universal Gas Constant - Joules per Kelvin per Mole</li>
+<li>pi      Archimedes' Number - The Ratio of a Circle's Circumference to Its Diameter</li>
+<li>phi     The Golden Ratio</li>
+</ul>
+<p>General Functions:</p>
+<ul>
+<li>abs(x)       the absolute value of x</li>
+<li>exp(x)       the natural antilog of x (e raised to the power of x)</li>
+<li>hypot(y, x)  the length of the hypotenuse - Pythagoras Theorem</li>
+<li>log(x)       the natural log of x</li>
+<li>pow(x,y)     raise x to the power of y</li>
+<li>sqrt(x)      the square root of x</li>
+</ul>
+<p>Trigonometric Functions Using Radians</p>
+<ul>
+<li>sin(r)       the sine of an angle in radians</li>
+<li>cos(r)       the cosine of an angle in radians</li>
+<li>tan(r)       the tangent of an angle in radians</li>
+<li>asin(x)      the arcsine in radians of x</li>
+<li>acos(x)      the arccosine in radians of x</li>
+<li>atan(x)      the arctangent in radians of x</li>
+<li>atan2(y,x)   the arctangent in radians of y/x</li>
+</ul>
+<p>Trigonometric Functions Using Degrees</p>
+<ul>
+<li>dsin(d)      the sine of an angle in degrees</li>
+<li>dcos(d)      the cosine of an angle in degrees</li>
+<li>dtan(d)      the tangent of an angle in degrees</li>
+<li>adsin(x)     the arcsine in degrees of x</li>
+<li>adcos(x)     the arccosine in degrees of x</li>
+<li>adtan(x)     the arctangent in degrees of x</li>
+<li>adtan2(y,x)  the arctangent in degrees of y/x</li>
+</ul>
+<p>Hyperbolic Functions</p>
+<ul>
+<li>sinh(x)       the hyperbolic sine</li>
+<li>cosh(x)       the hyperbolic cosine</li>
+<li>tanh(x)       the hyperbolic tangent</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="editor-details.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="gregorian-date-calculator.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="editor-details.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="gregorian-date-calculator.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

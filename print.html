@@ -1,0 +1,1687 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>BTSpeak Manual</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="gettingStarted.html"><strong aria-hidden="true">1.</strong> Getting Started Guide</a></li><li class="chapter-item expanded "><a href="welcome-screen.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="product-description.html"><strong aria-hidden="true">3.</strong> Product Description</a></li><li class="chapter-item expanded "><a href="command-summary.html"><strong aria-hidden="true">4.</strong> Command Summary</a></li><li class="chapter-item expanded "><a href="options-menu.html"><strong aria-hidden="true">5.</strong> Options Menu</a></li><li class="chapter-item expanded "><a href="file-management.html"><strong aria-hidden="true">6.</strong> File Management</a></li><li class="chapter-item expanded "><a href="speech-settings.html"><strong aria-hidden="true">7.</strong> Speech Settings</a></li><li class="chapter-item expanded "><a href="DECtalk.html"><strong aria-hidden="true">8.</strong> DECtalk</a></li><li class="chapter-item expanded "><a href="power-button.html"><strong aria-hidden="true">9.</strong> Power Button</a></li><li class="chapter-item expanded "><a href="review-mode.html"><strong aria-hidden="true">10.</strong> Review Mode</a></li><li class="chapter-item expanded "><a href="BTSpeak-editor.html"><strong aria-hidden="true">11.</strong> Working with the Editor</a></li><li class="chapter-item expanded "><a href="delete-menu.html"><strong aria-hidden="true">12.</strong> Delete Menu</a></li><li class="chapter-item expanded "><a href="navigation-menu.html"><strong aria-hidden="true">13.</strong> Navigation Menu</a></li><li class="chapter-item expanded "><a href="paste-menu.html"><strong aria-hidden="true">14.</strong> Paste Menu</a></li><li class="chapter-item expanded "><a href="editor-details.html"><strong aria-hidden="true">15.</strong> Editor: Technical Details</a></li><li class="chapter-item expanded "><a href="calculator.html"><strong aria-hidden="true">16.</strong> The Scientific Calculator</a></li><li class="chapter-item expanded "><a href="gregorian-date-calculator.html"><strong aria-hidden="true">17.</strong> gregorian date calculator</a></li><li class="chapter-item expanded "><a href="BTRadio.html"><strong aria-hidden="true">18.</strong> BT Radio</a></li><li class="chapter-item expanded "><a href="stopwatch.html"><strong aria-hidden="true">19.</strong> Stopwatch</a></li><li class="chapter-item expanded "><a href="voiceCommands.html"><strong aria-hidden="true">20.</strong> Voice Commands</a></li><li class="chapter-item expanded "><a href="OpenAI-key.html"><strong aria-hidden="true">21.</strong> OpenAI API Key</a></li><li class="chapter-item expanded "><a href="network-file-sharing.html"><strong aria-hidden="true">22.</strong> Network File Sharing</a></li><li class="chapter-item expanded "><a href="make-third-partition.html"><strong aria-hidden="true">23.</strong> Creating the Public Partition for Network File Sharing</a></li><li class="chapter-item expanded "><a href="desktop-navigation.html"><strong aria-hidden="true">24.</strong> Desktop Navigation - Pro Units</a></li><li class="chapter-item expanded "><a href="desktop-review.html"><strong aria-hidden="true">25.</strong> Desktop Review - Pro Units</a></li><li class="chapter-item expanded "><a href="keyboard-emulation.html"><strong aria-hidden="true">26.</strong> Keyboard Emulation</a></li><li class="chapter-item expanded "><a href="vibration-patterns.html"><strong aria-hidden="true">27.</strong> Vibration Patterns</a></li><li class="chapter-item expanded "><a href="menu-file.html"><strong aria-hidden="true">28.</strong> Menu Customization Files</a></li><li class="chapter-item expanded "><a href="rescue-mode.html"><strong aria-hidden="true">29.</strong> Rescue Mode</a></li><li class="chapter-item expanded "><a href="reset-button.html"><strong aria-hidden="true">30.</strong> Reset Button</a></li><li class="chapter-item expanded "><a href="tests-menu.html"><strong aria-hidden="true">31.</strong> Tests Menu</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">32.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BTSpeak Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="getting-started-with-your-bt-speak"><a class="header" href="#getting-started-with-your-bt-speak">Getting Started With Your BT Speak®</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Congratulations on your purchase of the BT Speak® from <a href="https://blazietech.com">Blazie Technologies, LLC.</a> The BT Speak® is a pocket computer designed for the visually impaired. It provides a standard 8-dot Braille keyboard for input and synthetic speech for output. The BT Speak® offers a collection of applications including an editor, scientific calculator, a dictionary, a weather app, and many others. The BT Speak® Pro offers all of these features but it also includes a full desktop mode with access to applications such as Google Chrome (Chromium), Firefox, Thunderbird and the LibreOffice suite. The device has a USB C port, a micro SD card slot and an HDMI port. Bluetooth and Wi-Fi are also included. The BT Speak® has a rechargeable battery that lasts for approximately ten hours. However, the amount of battery time will vary depending on how you use the device.</p>
+<h2 id="whats-in-the-box"><a class="header" href="#whats-in-the-box">What’s in the Box?</a></h2>
+<p>Your package should contain the following items:</p>
+<ul>
+<li>BTSpeak device</li>
+<li>USB C wall charger (C to C cable not included)</li>
+<li>USB Type-C to 3.5mm (1/8Inch) headphone adapter</li>
+</ul>
+<h2 id="physical-description"><a class="header" href="#physical-description">Physical Description</a></h2>
+<p>The BTSpeak is a very compact device. Its length and width are comparable to newer smartphones such as the iPhone 14 and 15, and its depth is roughly the equivalent of two phones stacked on top of one another. For proper orientation, place the unit on a flat surface and ensure the side with the ports is facing away from you. The bottom row of three buttons on the face of the unit should be closest to you. With proper placement out of the way, let us now explore the orientation of the unit.</p>
+<h3 id="the-back-edge"><a class="header" href="#the-back-edge">The Back Edge</a></h3>
+<p>Along the back edge of the device are three ports. From left to right the first port is a mini-HDMI connector. This is used to connect the BT Speak® to a TV or a computer monitor. Moving to the right the next port is a standard USB C port which allows you to connect the device to a power supply, USB headphones, external storage and other compatible accessories. The final port on this edge is a micro-SD card slot that can accept micro SD cards up to 1TB.</p>
+<h3 id="the-face-of-the-unit"><a class="header" href="#the-face-of-the-unit">The Face of the Unit</a></h3>
+<p>The face of the BT Speak® is mostly taken up with the 8-dot Braille keyboard. From left to right you will find Dot 3, Dot 2, Dot 1, Dot 4, Dot 5, and Dot 6. Below these keys are Dot 7, the spacebar, and Dot 8. You might notice that the space bar is slightly larger than the dot 7 and 8 keys. The remaining space on the top of the device contains a pair of small stereo speakers along with a microphone.</p>
+<h3 id="the-power-button"><a class="header" href="#the-power-button">The Power Button</a></h3>
+<p>The power button is located near the front of the right side and is recessed between two bumps. Note that even though the bumps feel like buttons, they are not. Rather, they guard against accidental presses of the power button. You’ll want to move your finger between those two bumps in order to locate and activate the power button.</p>
+<h2 id="getting-up-and-running"><a class="header" href="#getting-up-and-running">Getting Up and Running</a></h2>
+<h3 id="powering-on"><a class="header" href="#powering-on">Powering On</a></h3>
+<p>If the BT Speak® is off, briefly pressing the power button will cause it to activate and start the boot process.</p>
+<p>You should feel a short vibration almost immediately after you press the power button, at which point you can release it.<br />
+If you don't feel or hear anything this likely means that the battery needs to be charged.</p>
+<h3 id="putting-the-device-to-sleep"><a class="header" href="#putting-the-device-to-sleep">Putting the Device to Sleep</a></h3>
+<p>When you press the power button while the device is powered on, you'll feel a short vibration and your BT Speak® will announce, “sleeping.” This puts the device in a low power mode, very similar to locking a cell phone. Briefly press the power button again to wake up the device. You’ll feel a short vibration, after which your BT Speak® will announce, “awake.”</p>
+<h3 id="powering-down"><a class="header" href="#powering-down">Powering Down</a></h3>
+<p>If you press and hold the power button for three seconds, you'll feel a longer vibration and the BT Speak® will shut down. The device confirms this by announcing, “shutting down.”</p>
+<h3 id="using-chord-commands"><a class="header" href="#using-chord-commands">Using Chord Commands</a></h3>
+<p>Many BT Speak® commands use what are called "chords." A chord is a command where you press a letter or another group of keys along with the space bar. For example, when you want to press an O-Chord to open the Options menu you would press the letter O (dots 1-3-5) along with the space bar. Some chords make use of the dot 7 or dot 8 keys. For example, Z-7-Chord means that you would press the letter Z (dots 1-3-5-6) combined with dot 7 and the Space bar.</p>
+<h3 id="adjusting-speech"><a class="header" href="#adjusting-speech">Adjusting Speech</a></h3>
+<p>You may wish to adjust the speech settings when you first receive your unit. There are a number of speech settings that can be adjusted to your liking.</p>
+<h4 id="the-speech-settings-menu"><a class="header" href="#the-speech-settings-menu">The Speech Settings Menu</a></h4>
+<p>You can easily adjust the volume, speed and pitch of the voice via a quick Speech Settings menu. To access this menu, press <em>S-chord</em>. Your BT Speak® will say “Speech Settings.” Once inside this menu, press the following keys to adjust the voice.</p>
+<div class="table-wrapper"><table><thead><tr><th>Function</th><th>Command</th></tr></thead><tbody>
+<tr><td>Lower the Volume</td><td>Dot 1</td></tr>
+<tr><td>Raise the Volume</td><td>Dot 4</td></tr>
+<tr><td>Decrease the Rate</td><td>Dot 2</td></tr>
+<tr><td>Increase the Rate</td><td>Dot 5</td></tr>
+<tr><td>Lower the Pitch</td><td>Dot 3</td></tr>
+<tr><td>Raise the Pitch</td><td>Dot 6</td></tr>
+<tr><td>toggle key echo on or off</td><td>E</td></tr>
+<tr><td>Toggle word echo on or off</td><td>W</td></tr>
+<tr><td>Key echo off</td><td>E with dot 7</td></tr>
+<tr><td>Key echo on</td><td>E with dot 8</td></tr>
+<tr><td>Word echo off</td><td>W with dot 7</td></tr>
+<tr><td>Word echo on</td><td>W with dot 8</td></tr>
+</tbody></table>
+</div>
+<p>A series of ascending tones indicates that key echo or word echo is enabled. Descending tones indicate that it has been disabled.<br />
+Warning: in the current update these tones are quite loud. We are aware of this and are working on a fix. Press <em>Z-chord</em> to exit the Speech Settings menu.</p>
+<h4 id="changing-the-speech-engine"><a class="header" href="#changing-the-speech-engine">Changing the Speech Engine</a></h4>
+<p>The BT Speak® has two speech engines, DEC-Talk from Human Voice, LLC and eSpeak. Here are the steps for switching from one speech engine to another.</p>
+<ol>
+<li>Press <em>O-chord</em> for the Options menu (More on this in the next section).</li>
+<li>Press <em>S</em> for the System menu.</li>
+<li>Press <em>S</em> for the System Administration menu.</li>
+<li>Press <em>S</em> for the Change Settings menu.</li>
+<li>Press <em>dot 4-chord</em> to move to “Text to Speech Engine” and press enter.</li>
+<li>From this menu you can press dot 1-chord or dot 4-chord to move to either DEC-Talk or eSpeak. When you get to the choice that you want press enter.</li>
+</ol>
+<h3 id="the-options-menu"><a class="header" href="#the-options-menu">The Options Menu</a></h3>
+<p>Press <em>O-chord</em> to open the Options menu. Think of this as the gateway for opening all of the applications and other services available on your device. Press <em>dot 4-chord</em> to move down to the next choice and <em>dot 1-chord</em> to move to the previous choice. You can also press the spacebar to move forward and dot 7 to move back. <em>Dots 1-2-3-chord</em> moves to the first menu item and <em>dots 4-5-6-chord</em> moves to the last menu item. Pressing <em>dot 8</em> activates the selected choice. Some items, such as “System”, will open a submenu of additional choices if you press enter while pointing to them. Most options in this menu have a shortcut key to open them. Press <em>dots 3-6 chord</em> to hear the shortcut key for the option you’re pointing to. For example, if you’re pointing to “Time” pressing 3-6 chord will announce the letter T. If you’re pointing to “date” pressing 3-6 chord announces the letter D. This means that you could press O-chord followed by the letter T to hear the time or D to hear the date. Pressing <em>Z-chord</em> functions like the Escape key. It will take you back one level or menu.</p>
+<h3 id="getting-help"><a class="header" href="#getting-help">Getting Help</a></h3>
+<p>The BT Speak® provides context-sensitive help. You can press <em>H-chord</em> From anywhere to open a help file describing information and commands based on where you are at present. As an example, if you’re working in the editor, pressing H-chord gives you specific help about using the editor. If you’d like to browse a list of all of the available help files press <em>O-chord</em> followed by the letter <em>H</em>. You will be presented with a menu of topics. You can navigate through the list of help topics by pressing dot 4-chord to move to the next title and dot 1-chord to move to the previous title. When you locate the help topic you want to read, press dot 8. Press Z-chord to close the help file and return to where you were when you opened it.</p>
+<h3 id="connecting-to-wi-fi"><a class="header" href="#connecting-to-wi-fi">Connecting to Wi-Fi</a></h3>
+<p>After adjusting some essential settings such as speech, one of the first things you’ll want to do is to connect your BT Speak® to your Wi-Fi network. This is important for several reasons, not the least of which is to install the latest software update. To connect to your Wi-Fi network, do the following:</p>
+<ol>
+<li>Press <em>O-chord</em> to enter the Options menu.</li>
+<li>Press dot 4-chord, or just the space bar, until you move to the Wi-Fi menu and press dot 8 which is the enter key. You can also use the single-letter shortcut, which is the letter <em>W</em>.</li>
+<li>Press the letter <em>A</em>. This is a shortcut to add a network. Your BT Speak® will announce, “discovering visible Wi-Fi Networks.” The device may issue a few short vibrations while it searches for available networks.</li>
+<li>You will now be in a list of available networks that you can connect to. Your BT Speak® will announce the first network in the list. You can press dot 4-chord to move forward through the list of networks. Dot 1-chord navigates backward through the list. Pressing <em>dots 1-4-chord</em> speaks the current item (network name) that you’re pointing to. When you find the network that you want to join, press <em>dot 8</em> by itself. Remember, we use dot 8 as the enter key.</li>
+<li>Once you select the network, the BT Speak® says, “password”. You will feel short vibration pulses while it waits for you to enter your password. While entering your password, you will not hear the characters as you type them. Instead, you will hear “asterisk” for every character that you enter. This is standard practice and is done to ensure security so that others who may be nearby won’t know what you’re typing.
+<ol>
+<li>Note that passwords must be entered using Computer Braille symbols, rather than contracted Braille.</li>
+<li>As such, uppercase letters are controlled by pressing <em>U-chord</em>. Press U-chord once to capitalize the next letter only. Press U-chord twice to “lock” the keyboard in upper case mode. This is helpful if your password has several capital letters in a row. Pressing U-chord a third time unlocks uppercase mode.</li>
+<li>Alternatively, you can press and hold <em>dot 7</em> while you type each character in order to capitalize it.</li>
+</ol>
+</li>
+<li>Once you have finished entering your password, press enter (dot 8). If you’ve entered your password correctly, your device will confirm this by telling you that you are now connected to your network.</li>
+</ol>
+<h3 id="upgrading-your-device"><a class="header" href="#upgrading-your-device">Upgrading Your Device</a></h3>
+<p>Blazie Technologies regularly provides updates for your BT Speak®. These updates improve existing features as well as adding new features and capabilities to your device. You are strongly encouraged to ensure your battery capacity is over 50% before upgrading. We also recommend plugging in your unit during the upgrade process to ensure against battery-related interruptions. To upgrade your device, perform the following steps.</p>
+<ol>
+<li>Press <em>O-chord</em> for the Options menu.</li>
+<li>Press <em>S</em> for the System menu.</li>
+<li>Press <em>S</em> for the System Administration menu.</li>
+<li>Press <em>U</em> for Upgrade. You’ll be asked if you’re sure you want to do this.</li>
+<li>Press the letter <em>Y</em> for yes.</li>
+<li>Press <em>dot 8</em> for enter. The upgrade will begin. Your unit will issue a short vibration about once every second and you’ll also hear status messages during this process, such as “installing audio drivers.”</li>
+</ol>
+<p>After the upgrade has completed your unit will reboot. This means that it will power down and then restart. Wait until you hear the BT Speak Ready message followed by the name of the currently open file, at which point you’ll be ready to continue using your device.</p>
+<h2 id="introduction-to-the-editor"><a class="header" href="#introduction-to-the-editor">Introduction to the Editor</a></h2>
+<p>The editor allows you to create, open and edit documents. It accepts plain text, HTML and Braille files. It is available on the BT Speak® and the BT Speak® Pro models.</p>
+<h3 id="creating-a-file"><a class="header" href="#creating-a-file">Creating a File</a></h3>
+<p>To create a file:</p>
+<ol>
+<li>Press <em>O-chord</em> to open the Options menu.</li>
+<li>Navigate with <em>dot 4-chord</em> until you get to “File Browser” and press dot 8 (for enter.) Alternatively, you can press the letter <em>F</em> and you will immediately be in the file browser.</li>
+<li>Press the letter <em>C</em> which tells the device that you want to create a new file. The BT Speak® announces, “enter file name”</li>
+<li>Type the title of the file that you wish to create. File names must be written using Computer Braille. As such, entering a dot will require you to use <em>dots 4-6</em>. Adding a .brl or .brf extension will allow you to write and edit your file using contracted Braille. An example might be journal.brl.</li>
+<li>Press enter <em>(dot 8)</em> when you are satisfied with your filename. The file browser will close and you will be in the new file that you created.</li>
+</ol>
+<h3 id="navigating-in-a-file"><a class="header" href="#navigating-in-a-file">Navigating in a File</a></h3>
+<p>The following commands can be used to navigate in a file.</p>
+<div class="table-wrapper"><table><thead><tr><th>Function</th><th>Command</th></tr></thead><tbody>
+<tr><td>Move to previous line</td><td>Dot 1-chord</td></tr>
+<tr><td>Move to next line</td><td>Dot 4-chord</td></tr>
+<tr><td>Speak the current line</td><td>Dots 1-4 chord</td></tr>
+<tr><td>Move to previous word</td><td>Dot 2-chord</td></tr>
+<tr><td>Move to next word</td><td>Dot 5-chord</td></tr>
+<tr><td>Speak the current word</td><td>Dots 2-5 chord</td></tr>
+<tr><td>Move to previous character</td><td>Dot 3-chord</td></tr>
+<tr><td>Move to next character</td><td>Dot 6-chord</td></tr>
+<tr><td>Speak current character</td><td>Dots 3-6-chord</td></tr>
+<tr><td>Go to the beginning of the file</td><td>Dots 1-2-3-chord</td></tr>
+<tr><td>Go to the end of the file</td><td>Dots 4-5-6-chord</td></tr>
+</tbody></table>
+</div>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>We hope that this guide has helped you to get up and running with your BT Speak®. If you need assistance or have an idea for a feature, please don’t hesitate to reach out to us. You can contact us by phone at (772) 214-1616. Our support email address is support@blazie.net. We hope you enjoy your BT Speak® and that it provides you with years of excellent service.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="the-btspeak-from-blazie-technologies"><a class="header" href="#the-btspeak-from-blazie-technologies">The BTSpeak from Blazie Technologies</a></h2>
+<p>For help on specific topics, press O-Chord to open the Options Menu, followed by the letter H.</p>
+<p>We recommend that new users begin by reading these help topics in the following order:</p>
+<ul>
+<li>Product Description</li>
+<li>Command Summary</li>
+<li>Options Menu</li>
+<li>File Management</li>
+<li>Speech Settings</li>
+<li>Power Button</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="product-description-help"><a class="header" href="#product-description-help">Product Description Help</a></h2>
+<p>The BTSpeak, created by Blazie Technologies, is a hand-held computer designed for the visually impaired. It sports a standard 8-dot Braille keyboard for input and uses synthetic speech for output. To turn it on, briefly press the slightly recessed power button on the machine's right edge. The machine will vibrate briefly, and within 30 seconds will say, "BTSpeak ready." Press the button briefly to put the unit in sleep mode, or press and hold for two seconds to shut it down entirely.</p>
+<p>Along the back edge are three ports. The farthest plug on the left is a mini-HDMI connector (used to connect the BTSpeak to a television or computer monitor). Second in from the left is a standard USB C port which allows you to connect a power supply, USB headphones, external storage, and other accessories. The final slot on the back of the unit is a micro-SD card slot.</p>
+<p>The front face of the BTSpeak is largely taken up with the 8-dot Braille keyboard. From back to front you will find Dot 3, Dot 2, Dot 1, Dot 4, Dot 5, and Dot 6. Below these keys are Dot 7, the spacebar, and Dot 8. The remaining space of the front face contains a pair of small stereo speakers from which sound emanates and a microphone for recording notes, dictation, and issuing voice commands.</p>
+<p>Many BTSpeak commands use what are called "chords."
+A chord is simply a command that involves use of the spacebar.
+For example, when you are asked to press an O-Chord, what we mean is to press the letter O (1, 3, and 5) and the spacebar together.
+Z-7-Chord means to press the letter Z (1-3-5-6), 7, and the Spacebar.
+We also describe letters and commands using dot numbers. For example, the letter A is 1, B is 1-2, C is 1-4, and so on.</p>
+<p>The BTSpeak's editor is a modified version of the nano editor (which is available on all Linux distributions).
+It's a simple but powerful editor that uses a TUI (text-based user interface) as opposed to a GUI (graphical user interface).
+All of the programs on the BTSpeak use a text interface, which has traditionally been much easier for a blind person to use.</p>
+<p>Nano was written for a qwerty keyboard.
+We have augmented some of its key bindings, therefore, in order to conform more closely to the BTSpeak's braille keyboard.
+For example, we use F-Chord for the find command, whereas the editor uses Control-W, because the Braille 'n Speak and many products for the blind use F-Chord for find.
+For another example, we use M-Chord to set the mark whereas the editor uses Alt-A.</p>
+<p>Unlike most notetakers, like the Braille 'n Speak, the editor can have many files open at the same time.
+You can cycle through them with 5-6-8-Chord (forward one file) and 2-3-7-Chord (back one file).
+When you open a file with O-Chord F, it adds a new buffer in the circular ring of files.
+To close a file, take it out of the file ring by pressing O-Chord F Q.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="command-summary-help"><a class="header" href="#command-summary-help">Command Summary Help</a></h2>
+<h3 id="quick-navigation-tips"><a class="header" href="#quick-navigation-tips">Quick Navigation Tips:</a></h3>
+<ul>
+<li>D-Chord enters the Delete Menu.</li>
+<li>N-Chord enters the Navigation Menu.</li>
+<li>O-Chord enters the Options Menu.</li>
+<li>P-Chord enters the Paste Menu.</li>
+<li>R-Chord enters Review Mode.</li>
+<li>S-Chord enters the Speech Settings Menu.</li>
+<li>1-5-6-Chord announces the name of the active menu or command.</li>
+<li>Z-Chord exits the current menu level.</li>
+<li>Z-7-Chord exits directly to the editor.</li>
+</ul>
+<p>Commands are entered from the editor's screen.
+The editor has two types of commands: control letters and meta characters.
+To type a control letter, type <em>X-chord</em> just before it.
+To type a meta character, type Escape (which is <em>2-6-Chord</em>) just before it.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="options-menu-help"><a class="header" href="#options-menu-help">Options Menu Help</a></h2>
+<p><em>O-Chord</em> enters the Options Menu; <em>Z-Chord</em> exits it.</p>
+<h3 id="menu-navigation"><a class="header" href="#menu-navigation">Menu Navigation</a></h3>
+<p>These letters can be typed to directly perform actions:</p>
+<ul>
+<li>A: Applications menu</li>
+<li>B: battery level</li>
+<li>C: scientific calculator</li>
+<li>D: current date</li>
+<li>F: File Browser</li>
+<li>G: Gregorian date calendar</li>
+<li>H: help topics</li>
+<li>M: File Management menu</li>
+<li>P: pair a Bluetooth device</li>
+<li>S: System menu</li>
+<li>T: current time</li>
+<li>W: connect to a Wi-Fi network</li>
+<li>
+<h1 id="dots-3-4-5-6-stopwatch"><a class="header" href="#dots-3-4-5-6-stopwatch">(dots 3-4-5-6): Stopwatch</a></h1>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="file-management-help"><a class="header" href="#file-management-help">File Management Help</a></h2>
+<p>There are two ways to perform file management -
+via the File Browser or via the Manage Files menu.
+Both methods are in the Options menu <em>(O-Chord)</em>.
+<em>Z-Chord</em> exits both.</p>
+<p>Both methods offer these choices:</p>
+<ul>
+<li>C: create a new file (prompts for name)</li>
+<li>D: delete a file or directory (prompts for confirmation)</li>
+<li>G: go to a specific directory (prompts for name, forces browser)</li>
+<li>H: show hidden files (toggle)</li>
+<li>L: leave the current file after saving any changes</li>
+<li>N: create a new directory (prompts for name)</li>
+<li>O: open an existing file (prompts for name)</li>
+<li>P: protect a file or directory (make it read-only)</li>
+<li>Q: quit the current file without saving changes</li>
+<li>R: rename a file or directory (prompts for new name)</li>
+<li>S: save the current file without leaving it</li>
+<li>U: unprotect a file or directory (make it read-write)</li>
+<li>W: which directory</li>
+</ul>
+<p>The File Browser offers this additional choice:</p>
+<ul>
+<li>M: switch to the File Management menu</li>
+</ul>
+<p>The Manage Files menu offers this additional choice:</p>
+<ul>
+<li>F: switch to the File Browser</li>
+</ul>
+<h3 id="menu-navigation-1"><a class="header" href="#menu-navigation-1">menu-navigation</a></h3>
+<p>If you are in the browser and need a reminder on the available file management shortcuts,
+type <em>M</em> to switch to the menu, explore the options, and type <em>F</em> to switch back to the browser.</p>
+<p>If an action prompts for confirmation, you can type one of these responses:</p>
+<ul>
+<li>yes: Y</li>
+<li>no: N</li>
+<li>repeat the question: R</li>
+</ul>
+<p>If you enter anything else then you'll be reminded of these choices.
+<em>Z-Chord</em> cancels the prompt - it's equivalent to answering no.</p>
+<p>When renaming, the new name response is pre-filled with the old name so that it can be easily edited.
+To clear this initial value, type <em>X-Chord, A</em> (to move to the beginning),
+followed by <em>X-Chord, K</em> (to delete from the cursor to the end).</p>
+<p>The file browser shows a list of the contents (files, subdirectories, etc) of the current directory.
+These keys can be used to navigate the list:</p>
+<ul>
+<li>select first item: 1-2-3-Chord</li>
+<li>select last item: 4-5-6-Chord</li>
+<li>select previous item (wraps from first to last): 1-Chord or Backspace</li>
+<li>select next item (wraps from last to first): 4-Chord or Space</li>
+<li>go to parent directory: 3-Chord</li>
+<li>go to selected directory: 6-Chord</li>
+<li>open selected file or go to selected directory: Enter</li>
+</ul>
+<p>If you are within the home directory's hierarchy then <em>Dot 3-Chord</em> (go to parent directory),
+as a safety constraint, won't allow you to browse above the home directory itself.
+You can, however, use <em>g</em> (go to directory) to bypass this constraint.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="speech-settings-help"><a class="header" href="#speech-settings-help">Speech Settings Help</a></h2>
+<p><em>S-Chord</em> enters the Speech Settings menu; <em>Z-Chord</em> exits it.</p>
+<p>Within this menu:</p>
+<ul>
+<li>decrease the volume: 1</li>
+<li>increase the volume: 4</li>
+<li>decrease the speed: 2</li>
+<li>increase the speed: 5</li>
+<li>decrease the pitch: 3</li>
+<li>increase the pitch: 6</li>
+<li>toggle the echoing of typed characters: E (1-5)</li>
+<li>toggle the speaking of completed words: W (2-4-5-6)</li>
+<li>For any of the toggle actions:
+<ul>
+<li>Adding 7 forces the setting off.
+*Adding 8 forces the setting on.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="dectalk-help"><a class="header" href="#dectalk-help">DECtalk Help</a></h2>
+<p>We're grateful to Human Voice LLC for having allowed us to include
+the DECtalk text-to-speech engine, free of charge, within the BTSpeak.</p>
+<p>To switch between eSpeak NG and DECtalk:</p>
+<ol>
+<li>Open the options menu and navigate to "System", "System Administration", "Settings", or type O-Chord, S, S, S.</li>
+<li>Select "Text to Speech Settings."</li>
+<li>Choose from either of the following options:</li>
+</ol>
+<ul>
+<li>Use eSpeak NG</li>
+<li>Use DECtalk</li>
+</ul>
+<p>The change is immediate - you won't need to reboot.</p>
+<p>If you select DECtalk but it is unable to run on the BTSpeak, the unit will speak an error and continue using eSpeak NG as before.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="power-button-help"><a class="header" href="#power-button-help">Power Button Help</a></h2>
+<p>The power button is located near the front of the right side between two bumps.
+Note that these bumps are there to protect against accidental pressing of the power button,
+and that neither of them is a button in its own right.</p>
+<h3 id="if-the-btspeak-is-off"><a class="header" href="#if-the-btspeak-is-off">If the BTSpeak is off:</a></h3>
+<p>Briefly pressing the power button will cause it to start booting.
+You can release the power button as soon as you feel a short vibration;
+you should feel it almost immediately.
+If you don't feel it then the battery is probably empty.
+If you don't feel it but are sure that the battery is charged
+then you may need to do the unthinkable - pressing the Reset button!</p>
+<h3 id="if-the-btspeak-is-on"><a class="header" href="#if-the-btspeak-is-on">If the BTSpeak is on:</a></h3>
+<p>When you press the power button, you'll feel a short vibration.
+If you continue to hold it for three seconds,
+you'll feel a longer vibration and the BTSpeak will shut down.
+Pressing the power button for less than three seconds will
+alternate the BTSpeak between being asleep and being awake.
+An announcement telling you which of these two states is being entered
+is made when the power button is released.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="review-mode-help"><a class="header" href="#review-mode-help">Review Mode Help</a></h2>
+<p><em>R-Chord</em> enters Review Mode; <em>Z-Chord</em> exits it.</p>
+<p>This mode allows you to review the contents of the screen independent of your cursor's position.
+Within this menu:</p>
+<ul>
+<li>move to the previous line and speak it: 1</li>
+<li>move to the next line and speak it: 4</li>
+<li>speak the current line: 1-4</li>
+<li>speak the indent level of the current line: long-hold 1-4</li>
+<li>move to the previous word and speak it: 2</li>
+<li>move to the next word and speak it: 5</li>
+<li>speak the current word: 2-5</li>
+<li>spell the current word: long-hold 2-5</li>
+<li>move to the previous character and speak it: 3</li>
+<li>move to the next character and speak it: 6</li>
+<li>speak the current character: 3-6</li>
+<li>speak the current character phonetically: long-hold 3-6</li>
+<li>stop speaking: 7</li>
+<li>return to the cursor: 8</li>
+<li>speak the current line and column numbers: 7-8</li>
+<li>move the screen cursor to the current location: long-hold 7-8</li>
+<li>go to the first non-space character on the current line and speak it: 1-3</li>
+<li>go to the last non-space character on the current line and speak it: 4-6</li>
+<li>go to the first non-blank line and speak it: 1-2-3</li>
+<li>go to the last non-blank line and speak it: 4-5-6</li>
+<li>speak from the first line through the current line: 7-Chord</li>
+<li>speak from the current line through the last line: 8-Chord</li>
+<li>speak the entire screen: 7-8-Chord</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="btspeak-editor-help"><a class="header" href="#btspeak-editor-help">BTSpeak Editor Help</a></h2>
+<p>Both the File Management menu <em>(O-Chord M)</em> and the File Browser <em>(O-Chord F)</em> provide these file editing functions:</p>
+<ul>
+<li>O: open an existing file (prompts for name)</li>
+<li>C: create a new file (prompts for name)</li>
+<li>S: save the current file without leaving it</li>
+<li>L: leave the current file after saving any changes</li>
+<li>Q: quit the current file without saving any changes</li>
+</ul>
+<p>Another way to open an existing file is to press Enter when on it in the File Browser.</p>
+<p>The editor's screen has three regions:</p>
+<ul>
+<li>A title bar on the top line; T-Chord navigates to it.</li>
+<li>A status bar on the bottom line; 3-4-Chord (s t) navigates to it.</li>
+<li>An edit area in the middle; E-Chord navigates to it.</li>
+</ul>
+<p>From left to right, the title bar contains:</p>
+<ul>
+<li>Either the word "editing" (you can make changes) or the word "viewing" (you can't make changes) to the file.</li>
+<li>The name of (not the full path to) the file.</li>
+<li>The word "restricted" if the editor is in its restricted mode.</li>
+<li>The phrase "mark set" if the mark has been set.</li>
+<li>The phrase "unsaved changes" if you've made at least one change to the file.</li>
+</ul>
+<p>The edit area is kept blank so that the BTSpeak's own speech mechanism won't be accidentally triggered.
+This is done so that the editor can always be in full control of what gets spoken.</p>
+<p>The status bar is spoken whenever its content changes.
+It's used to display information, warnings, errors, and alerts.
+If there's more than one message to be displayed at the same time then the most important one is chosen.</p>
+<p>The editor has three menus (each of which has its own help file):</p>
+<ul>
+<li>D-Chord: the Delete menu</li>
+<li>N-Chord: the Navigation menu</li>
+<li>P-Chord: the Paste menu</li>
+</ul>
+<p>An editor command is bound to either a Control character or to a Meta character.
+[{control-characters}]
+[{meta-characters}]</p>
+<p>These chords provide easier and more intuitive ways to perform useful editing functions.</p>
+<ul>
+<li>3-4-5-6-Chord (number sign): toggle the showing of line numbers (editor command is Meta N)</li>
+<li>8-Chord: type a "newline" character (editor command is Control M)</li>
+<li>7-Chord: delete the character to the left of the cursor (editor command is Control H)</li>
+<li>2-5-6-Chord (low d): delete the character that the cursor is on (editor command is Control D)</li>
+<li>1-4-Chord: say the current line (editor command is Control Y)</li>
+<li>2-5-Chord: say the current word (editor command is Control V)</li>
+<li>3-6-Chord: say the current character (editor command is Control J)</li>
+<li>1-Chord: go to the previous line (editor command is Arrow-Up)</li>
+<li>4-Chord: go to the next line (editor command is Arrow-Down)</li>
+<li>2-Chord: go to the previous word (editor command is Control B)</li>
+<li>5-Chord: go to the next word (editor command is Control F)</li>
+<li>3-Chord: go to the previous character (editor command is Arrow-Left)</li>
+<li>6-Chord: go to the next character (editor command is Arrow-Right)</li>
+<li>1-3-Chord: go to the first character of the current line (editor command is Control A)</li>
+<li>4-6-Chord: go to the last character of the current line (editor command is Control E)</li>
+<li>1-2-3-Chord: go to the first line of the file (editor command is Meta Backslash)</li>
+<li>4-5-6-Chord: go to the last line of the file (editor command is Meta Slash)</li>
+<li>2-3-Chord: go to the beginning of the previous (or current) block of text (editor command is Meta 7)</li>
+<li>5-6-Chord: go to the beginning of the next block of text (editor command is Meta 8)</li>
+<li>G-Chord: Place/remove an anchor (editor command is Meta X)</li>
+<li>1-2-7-Chord: go to the previous anchor (editor command is Control P)</li>
+<li>4-5-8-Chord: go to the next anchor (editor command is Control N)</li>
+<li>1-3-7-Chord: go to the beginning of the current (or previous) paragraph (editor command is Meta Left Parenthesis)</li>
+<li>4-6-8-Chord: go to the end of the current (or next) paragraph (editor command is Meta Right Parenthesis)</li>
+<li>2-3-7-Chord: switch to the previous open file (editor command is Meta Less Than)</li>
+<li>5-6-8-Chord: switch to the next open file (editor command is Meta Greater Than)</li>
+<li>F-Chord (prompts for text): find forward (editor command is Control W)</li>
+<li>F-7-8-Chord (prompts for text): find backward (editor command is Control Q)</li>
+<li>F-7-Chord: find previous (editor command is Meta Q)</li>
+<li>F-8-Chord: find next (editor command is Meta W)</li>
+<li>M-Chord: set/remove the mark (editor command is Meta A)</li>
+<li>1-2-6-Chord: copy to the clipboard (editor command is Meta 6)</li>
+<li>3-4-6-Chord: paste from the clipboard (editor command is Control U)</li>
+</ul>
+<p>Cutting and copying to, and pasting from, the clipboard can also be performed via the Delete menu (D-chord).
+These operations use the "from to" (rather than the "from through") paradigm, i.e. they're exclusive rather than inclusive.
+This means that the first character is included but that the last character isn't.
+If the cursor is before the mark then the marked character isn't included.
+If the cursor is after the mark then the character under the cursor isn't included.</p>
+<p>Clipboard commands have also been defined for those who are accustomed to using the traditional Control- X, C, and V conventions.
+These are formed by adding 8-Chord to the letter. So:</p>
+<ul>
+<li>M-8-Chord: set the mark</li>
+<li>X-8-Chord: cut to the clipboard</li>
+<li>C-8-Chord: copy to the clipboard</li>
+<li>V-8-Chord: paste from the clipboard</li>
+</ul>
+<p>The full list of the editor's commands is:</p>
+<ul>
+<li>Enter: insert a newline at the cursor's position</li>
+<li>Tab: insert a tab at the cursor's position</li>
+<li>Arrow Left: go back one character</li>
+<li>Arrow Right: go forward one character</li>
+<li>Arrow Up: go up one line</li>
+<li>Arrow Down: go down one line</li>
+<li>Page Up: go up one screenful</li>
+<li>Page Down: go down one screenful</li>
+<li>Home: go to the beginning of the current line</li>
+<li>End: go to the end of the current line</li>
+<li>Insert: paste another file into the current (or a new) file</li>
+<li>Delete: delete the character that the cursor is on</li>
+<li>Backspace: delete the character to the left of the cursor</li>
+<li>Control A: go to the beginning of the current line</li>
+<li>Control B: go back one word</li>
+<li>Control C: show the cursor's position</li>
+<li>Control D: delete the character under the cursor</li>
+<li>Control E: go to the end of the current line</li>
+<li>Control F: go forward one word</li>
+<li>Control G: display help (Control X to exit)</li>
+<li>Control H: delete the character to the left of the cursor</li>
+<li>Control I: insert a tab at the cursor's position</li>
+<li>Control J: say the current character</li>
+<li>Control K: cut the current line (or marked region)</li>
+<li>Control L: refresh (redraw) the screen</li>
+<li>Control M: insert a newline at the cursor's position</li>
+<li>Control N: go to the next anchor (wraps from last to first)</li>
+<li>Control O: save the current file (or marked region)</li>
+<li>Control O twice: quit the current file without saving changes</li>
+<li>Control P: go to the previous anchor (wraps from first to last)</li>
+<li>Control Q: search backward for a string (or regular expression)</li>
+<li>Control R: paste another file into the current (or a new) file</li>
+<li>Control S: save the current file without leaving it</li>
+<li>Control T: insert the output of an editor function or an external command into the current (or a new) file</li>
+<li>Control U: paste the clipboard at the cursor's position</li>
+<li>Control V: say the current word</li>
+<li>Control W: search forward for a string (or regular expression)</li>
+<li>Control X: close the current file (or exit the editor)</li>
+<li>Control Y: say the current line</li>
+<li>Control Z: zap (discard) the current line (or marked region)</li>
+<li>Control Right Bracket: try to complete the current word</li>
+</ul>
+<p>*Meta A: set the mark at the cursor's position</p>
+<ul>
+<li>Meta B: invoke the linter</li>
+<li>Meta C: enable/disable always show cursor position</li>
+<li>Meta D: count the number of words, lines, and characters</li>
+<li>Meta E: redo the last undone operation</li>
+<li>Meta F: invoke the formatter</li>
+<li>Meta G: go to the specified line and column (prompts for line,column numbers)</li>
+<li>Meta H: enable/disable smart home key</li>
+<li>Meta I: enable/disable auto indent</li>
+<li>Meta J: justify the entire file</li>
+<li>Meta K: enable/disable cut from cursor</li>
+<li>Meta L: enable/disable hard wrapping of over-long lines</li>
+<li>Meta M: enable/disable mouse support</li>
+<li>Meta N: enable/disable show line numbers</li>
+<li>Meta O: enable/disable convert typed tabs to spaces</li>
+<li>Meta P: enable/disable show whitespace</li>
+<li>Meta Q: search backward for the next occurrence</li>
+<li>Meta R: replace a string (or regular expression)</li>
+<li>Meta S: enable/disable soft wrapping of over-long lines</li>
+<li>Meta T: cut from the cursor's position to the end of the file</li>
+<li>Meta U: undo the last operation</li>
+<li>Meta V: insert the next keystroke verbatim</li>
+<li>Meta W: search forward for next occurrence</li>
+<li>Meta X: place/remove an anchor at the current line</li>
+<li>Meta Y: enable/disable color syntax highlighting</li>
+<li>Meta Z: invoke the spell checker</li>
+<li>Meta 1: delete backward to the start of the current word</li>
+<li>Meta 2: delete forward to the start of the next word</li>
+<li>Meta 3: comment/uncomment the current line (or marked lines)</li>
+<li>Meta 6: copy the current line (or marked region)</li>
+<li>Meta 7: go to the beginning of the current (or previous) block of text</li>
+<li>Meta 8: go to the beginning of the next block of text</li>
+<li>Meta Left Parenthesis: go to the beginning of the current (or previous) paragraph</li>
+<li>Meta Right Parenthesis: go to the end of the current (or next) paragraph</li>
+<li>Meta Equal: scroll the line with the cursor to the middle of the screen</li>
+<li>Meta Plus: scroll down one line</li>
+<li>Meta Minus: scroll up one line</li>
+<li>Meta Less Than: switch to the previous open file</li>
+<li>Meta Greater Than: switch to the next open file</li>
+<li>Meta Left Brace: unindent the current line (or marked lines)</li>
+<li>Meta Right Brace: indent the current line (or marked lines)</li>
+<li>Meta Right Bracket: go forward/backward to the matching bracket</li>
+<li>Meta Backslash: go to the first line of the file</li>
+<li>Meta Slash: go to the last line of the file</li>
+<li>Meta Colon: start/stop recording a macro</li>
+<li>Meta Semicolon: run the last recorded macro</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="delete-menu-help"><a class="header" href="#delete-menu-help">Delete Menu Help</a></h2>
+<p><em>D-Chord</em> enters the Delete menu; <em>Z-Chord</em> exits it.</p>
+<h3 id="menu-navigation-2"><a class="header" href="#menu-navigation-2">Menu Navigation</a></h3>
+<p>These letters can be typed to directly perform actions:</p>
+<ul>
+<li>B: cut backward to the start of the current word</li>
+<li>C: delete the current character</li>
+<li>K: copy the current line (or the marked region)</li>
+<li>L: cut the current line (or the marked region)</li>
+<li>M: set or remove the mark</li>
+<li>P: paste</li>
+<li>R: redo the last undone operation</li>
+<li>U: undo the last operation</li>
+<li>W: cut forward to the start of the next word</li>
+<li>Z: cut to the end of the file</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="navigation-menu-help"><a class="header" href="#navigation-menu-help">Navigation Menu Help</a></h2>
+<p><em>N-Chord</em> enters the Navigation Menu; <em>Z-Chord</em> exits it.</p>
+<h3 id="menu-navigation-3"><a class="header" href="#menu-navigation-3">Menu Navigation</a></h3>
+<p>These symbols can be typed to directly perform actions:</p>
+<ul>
+<li>Less Than (dots 1-2-6): switch to the previous file
+<ul>
+<li>(editor command is Meta Less Than)</li>
+<li>(BTSpeak command is 2-3-7-Chord)</li>
+</ul>
+</li>
+<li>Greater Than (dots 3-4-5): switch to the next file
+<ul>
+<li>(editor command is Meta Greater Than)</li>
+<li>(BTSpeak command is 5-6-8-Chord)</li>
+</ul>
+</li>
+<li>Left Parenthesis (dots 1-2-3-5-6): go to the beginning of the current (or previous) paragraph
+<ul>
+<li>(editor command is Meta Left Parenthesis)</li>
+<li>(BTSpeak command is 1-3-7-Chord)</li>
+</ul>
+</li>
+<li>Right Parenthesis (dots 2-3-4-5-6): go to the end of the current (or next) paragraph
+<ul>
+<li>(editor command is Meta Right Parenthesis)</li>
+<li>(BTSpeak command is 4-6-8-Chord)</li>
+</ul>
+</li>
+<li>Left Brace (dots 2-4-6): go to the start of the current (or previous) block
+<ul>
+<li>(editor command is Meta 7)</li>
+<li>(BTSpeak command is 1-2-7-Chord)</li>
+</ul>
+</li>
+<li>Right Brace (dots 1-2-4-5-6): go to the start of the next block
+<ul>
+<li>(editor command is Meta 8)</li>
+<li>(BTSpeak command is 4-5-8-Chord)</li>
+</ul>
+</li>
+<li>Right Bracket (dots 1-2-4-5-6-7): go to the matching bracket
+<ul>
+<li>(editor command is Meta Right Bracket)</li>
+</ul>
+</li>
+<li>Equals (dots 1-2-3-4-5-6): place/remove an anchor
+<ul>
+<li>(editor command is Meta X)</li>
+</ul>
+</li>
+<li>Minus (dots 3-6): go to the previous anchor
+<ul>
+<li>(editor command is Control P)</li>
+<li>(BTSpeak command is 1-2-3-7-Chord)</li>
+</ul>
+</li>
+<li>Plus (dots 3-4-6): go to the next anchor
+<ul>
+<li>(editor command is Control N)</li>
+<li>(BTSpeak command is 4-5-6-8-Chord)</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="paste-menu-help"><a class="header" href="#paste-menu-help">Paste Menu Help</a></h2>
+<p><em>P-Chord</em> enters the Paste Menu; <em>Z-Chord</em> exits it.</p>
+<h3 id="menu-navigation-4"><a class="header" href="#menu-navigation-4">menu-navigation</a></h3>
+<p>These letters can be typed to directly perform actions:</p>
+<ul>
+<li>D: paste the current date</li>
+<li>T: paste the current time</li>
+<li>C: paste the last calculator result</li>
+<li>G: paste the last gregorian date result</li>
+<li>S: paste the last stopwatch reading</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="editor-details-help"><a class="header" href="#editor-details-help">Editor Details Help</a></h2>
+<p>The BTSpeak's editor is based on nano - a popular, light-weight text editor.
+Nano was chosen because it's stable, easy to learn, and has been tested and regularly updated for over 20 years.</p>
+<p>The main reasons that we've modified nano are:</p>
+<ul>
+<li>So that we have direct control over what's spoken as files are being reviewed and/or modified.</li>
+<li>To keep the edit area on the screen blank so that the BTSpeak's own speech mechanism isn't accidentally triggered.</li>
+<li>To disable line wrapping because, while a wrapped line fits on the screen nicely and looks well enough to a sighted user, one who uses speech much prefers that each line is always spoken in its entirety.</li>
+<li>To include custom commands that are useful when working with braille documents.</li>
+<li>To have a much simpler, speech-friendly, title bar.</li>
+</ul>
+<p>The editor has a number of features that can be enabled/disabled (toggled) via some of its commands.
+They are:</p>
+<ul>
+<li>Always Show Cursor Position
+<ul>
+<li>This feature is toggled by Meta C.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Smart Home Key
+<ul>
+<li>This feature is toggled by Meta H.</li>
+<li>We've enabled it by default.</li>
+</ul>
+</li>
+<li>Auto Indent
+<ul>
+<li>This feature is toggled by Meta I.</li>
+<li>We've enabled it by default.</li>
+</ul>
+</li>
+<li>Cut from Cursor
+<ul>
+<li>This feature is toggled by Meta K.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Hard Wrapping (of over-long lines)
+<ul>
+<li>This feature is toggled by Meta L.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Mouse Support
+<ul>
+<li>This feature is toggled by Meta M.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Show Line Numbers
+<ul>
+<li>This feature is toggled by Meta N.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Convert Typed Tabs to Spaces
+<ul>
+<li>This feature is toggled by Meta O.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Show Whitespace
+<ul>
+<li>This feature is toggled by Meta P.</li>
+<li>It's disabled by default.</li>
+</ul>
+</li>
+<li>Soft Wrapping (of over-long lines)
+<ul>
+<li>This feature is toggled by Meta S.</li>
+<li>We've disabled it by default.</li>
+</ul>
+</li>
+<li>Color Syntax Highlighting
+<ul>
+<li>This feature is toggled by Meta Y.</li>
+<li>It's enabled by default.</li>
+</ul>
+</li>
+</ul>
+<p>Most of the editor's key bindings are the same as nano's default ones.
+The ones that we've changed are:</p>
+<ul>
+<li>Control B: go back one word
+* (was go back one character)</li>
+<li>Control F: go forward one word
+* (was go forward one character)</li>
+<li>Control J: say the current character
+* (was justify the current paragraph)</li>
+<li>Control N: go to the next anchor
+* (was go down one line)</li>
+<li>Control P: go to the previous anchor
+* (was go up one line)</li>
+<li>Control V: say the current word
+* (was go down one screenful)</li>
+<li>Control Y: say the current line
+* (was go up one screenful)</li>
+<li>Control Z: zap (discard) the current line (or marked region)
+* (was suspend the editor)</li>
+<li>Meta X: place/remove an anchor at the current line
+* (was enable/disable show help summary below the status bar)</li>
+<li>Meta Z: invoke the spell checker
+* (was enable/disable suspension)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="calculator-help"><a class="header" href="#calculator-help">Calculator Help</a></h2>
+<p>When you enter this general-purpose mathematical calculator, you'll be on its expression prompt.<br />
+Enter whatever you'd like to calculate and press <em>dot 8</em> (which functions as the equals sign).<br />
+You'll then be on the result line.<br />
+You can go down one line with <em>4-Chord</em> to see the expression that was calculated.<br />
+You can then go back up to the result with <em>1-Chord</em>.<br />
+You can dismiss the result and go back to the expression prompt with <em>8</em>.
+Z-Chord, when on the expression prompt, exits the calculator.</p>
+<p>Expressions are entered, with a few exceptions, using Nemeth Code symbols.
+In the following lists, the key being described is shown first, followed by the dots to press to type it.</p>
+<ul>
+<li>the digit 1: 2</li>
+<li>the digit 2: 2-3</li>
+<li>the digit 3: 2-5</li>
+<li>the digit 4: 2-5-6</li>
+<li>the digit 5: 2-6</li>
+<li>the digit 6: 2-3-5</li>
+<li>the digit 7: 2-3-5-6</li>
+<li>the digit 8: 2-3-6</li>
+<li>the digit 9: 3-5</li>
+<li>the digit 0: 3-5-6</li>
+<li>the decimal point: 4-6</li>
+<li>plus: 3-4-6</li>
+<li>minus: 3-6</li>
+<li>times: 1-6</li>
+<li>divide: 3-4</li>
+<li>remainder: 1-4-6</li>
+<li>exponentiate (to the power of): 4-5-7</li>
+<li>left parenthesis: 1-2-3-5-6</li>
+<li>right parenthesis: 2-3-4-5-6</li>
+<li>a space: spacebar</li>
+</ul>
+<p>These key combinations can be used to edit the expression:</p>
+<ul>
+<li>go to the previous character: 3-Chord</li>
+<li>go to the next character: 6-Chord</li>
+<li>go to the first character: 1-3-Chord</li>
+<li>go to the end (just after the last character): 4-6-Chord</li>
+<li>delete the previous character: 7</li>
+<li>delete the current character: 2-5-6-Chord</li>
+<li>delete all of the previous characters: 1-3-6-7-8</li>
+</ul>
+<p>A number must not contain a space and may be entered to any precision both before and after the decimal point.
+The decimal point is optional and is not required if all digits after the point are 0.</p>
+<p>The special variable "last" contains the result of the previous calculation.
+You can define your own variables by entering lines of the form:
+variable = expression</p>
+<p>Standard operator precedence rules are used.
+From highest to lowest:</p>
+<ul>
+<li>a subexpression within parentheses</li>
+<li>negation</li>
+<li>exponentiation</li>
+<li>times, divide, remainder</li>
+<li>plus, minus</li>
+</ul>
+<p>Several scientific constants are available as predefined Variables:</p>
+<ul>
+<li>c       the speed of light - Meters per Second</li>
+<li>e       Euler's Number - The Base for Natural Logarithms</li>
+<li>f       Faraday Constant - Charge per Mole</li>
+<li>g       Gravitational Constant - Cubic Meters per Kilogram per Second per Second</li>
+<li>h       Planck Constant - Joule Seconds</li>
+<li>k       Boltzmann Constant - Joules per Kelvin</li>
+<li>l       Avogadro Constant - per Mole</li>
+<li>r       Universal Gas Constant - Joules per Kelvin per Mole</li>
+<li>pi      Archimedes' Number - The Ratio of a Circle's Circumference to Its Diameter</li>
+<li>phi     The Golden Ratio</li>
+</ul>
+<p>General Functions:</p>
+<ul>
+<li>abs(x)       the absolute value of x</li>
+<li>exp(x)       the natural antilog of x (e raised to the power of x)</li>
+<li>hypot(y, x)  the length of the hypotenuse - Pythagoras Theorem</li>
+<li>log(x)       the natural log of x</li>
+<li>pow(x,y)     raise x to the power of y</li>
+<li>sqrt(x)      the square root of x</li>
+</ul>
+<p>Trigonometric Functions Using Radians</p>
+<ul>
+<li>sin(r)       the sine of an angle in radians</li>
+<li>cos(r)       the cosine of an angle in radians</li>
+<li>tan(r)       the tangent of an angle in radians</li>
+<li>asin(x)      the arcsine in radians of x</li>
+<li>acos(x)      the arccosine in radians of x</li>
+<li>atan(x)      the arctangent in radians of x</li>
+<li>atan2(y,x)   the arctangent in radians of y/x</li>
+</ul>
+<p>Trigonometric Functions Using Degrees</p>
+<ul>
+<li>dsin(d)      the sine of an angle in degrees</li>
+<li>dcos(d)      the cosine of an angle in degrees</li>
+<li>dtan(d)      the tangent of an angle in degrees</li>
+<li>adsin(x)     the arcsine in degrees of x</li>
+<li>adcos(x)     the arccosine in degrees of x</li>
+<li>adtan(x)     the arctangent in degrees of x</li>
+<li>adtan2(y,x)  the arctangent in degrees of y/x</li>
+</ul>
+<p>Hyperbolic Functions</p>
+<ul>
+<li>sinh(x)       the hyperbolic sine</li>
+<li>cosh(x)       the hyperbolic cosine</li>
+<li>tanh(x)       the hyperbolic tangent</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="gregorian-date-calculator-help"><a class="header" href="#gregorian-date-calculator-help">Gregorian Date Calculator Help</a></h2>
+<p>The date calculator allows you to calculate the day of the week of a past or future date in three ways:</p>
+<ol>
+<li>By entering the number of days (starting from the current date). An optional plus sign <em>(Dots 3-4-6)</em> at the beginning means you want to look forward, while a minus <em>(Dots 3-6)</em> means you want to look back.</li>
+<li>By entering a specific date either in the form MMDDYY or MMDDYYYY, where MM represents the month, DD the day, and YY or YYYY the year.</li>
+<li>By entering a number-sign (Dots 3-4-5-6) to hear the day number of the current year.</li>
+</ol>
+<p>All numbers should be entered using Computer Braille (that is, dropped numbers with no number-sign).
+When finished, press <em>8</em> to hear the date.
+If the date calculator was not able to understand what you entered, it responds with "invalid input."</p>
+<p>Some examples:</p>
+<ol>
+<li>To find the date 30 days from now, enter 30 or +30.</li>
+<li>To find the date 500 days ago, enter -500.</li>
+<li>To learn which day of the week occurred on July 4, 1776, type 07041776.</li>
+<li>To learn when January 1, 1995 occurred, enter either 010195 or 01011995.</li>
+<li>To find the number of days since the current year began, enter the number-sign. January 1 is day 1, while December 31 is day 365.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><p>##BTRadio Menu Help</p>
+<p>BTRadio is a music console for Pandora Radio. The command to exit is q.</p>
+<p>Begin by selecting a station with the menu option 'Select station'. Their are five music categories available: "Decades"&gt;
+Selecting a station from the category list will initiate music stream from the station and return to the BTRadio main me&gt;</p>
+<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Shortcut</th><th>Function</th></tr></thead><tbody>
+<tr><td>Pause/Resume play</td><td>p</td><td>pauses the music stream. Selecting this option again will resume play.</td></tr>
+<tr><td>Volume up</td><td>u</td><td>raises BTRadio music volume 10%</td></tr>
+<tr><td>Volume down</td><td>d</td><td>decreases BTRadio music volume 10%</td></tr>
+<tr><td>Next song</td><td>n</td><td>skips the current song and plays the next song in queue on the same station</td></tr>
+<tr><td>Add to Favorites</td><td>no shortcut</td><td>creates a sixth music category called "Favorites" and adds the current station to that l&gt;</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h2 id="stopwatch-help"><a class="header" href="#stopwatch-help">Stopwatch Help</a></h2>
+<p>This program functions as both a traditional stopwatch and countdown timer.
+In stopwatch mode, the program begins counting up from 0 seconds until you tell it to stop.
+In countdown mode, the program counts down from a set number of minutes and seconds until the time you specify has elapsed.</p>
+<p>Use the following keys to operate the stopwatch:</p>
+<ul>
+<li>Start and stop: 6</li>
+<li>Reset: 3</li>
+<li>Hear time elapsed: Space</li>
+<li>Repeat last reading: C</li>
+<li>Start countdown timer: 3-4-5-6</li>
+<li>Exit: Z-Chord</li>
+</ul>
+<p>When using the countdown timer, you will be asked for minutes and seconds.
+Type each value separately using Computer Braille (that is, numbers in the lower half of the cell and no number-sign).
+You will receive spoken and vibration alerts at 30, 20, 15, 10, 3, and 1 minute intervals,
+50, 40, 30, 20, 15, and 10 second intervals,
+followed by an alert every second until the time reaches 0.</p>
+<p>Note: the program does not currently run in the background. This is planned for a future update.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="voice-commands"><a class="header" href="#voice-commands">Voice Commands</a></h1>
+<p>Your BTSpeak allows you to run several functions using your voice.
+Current supported functions include:</p>
+<ul>
+<li>Get local weather</li>
+<li>Define a word in the dictionary</li>
+<li>Show the BTSpeak battery level</li>
+<li>ShowWiFi connections</li>
+</ul>
+<p>Select Voice-commands from the options menu to initiate a voice command. <em>Z-chord</em> will exit this mode.</p>
+<p>After running Voice-commands, wait for the tone and then speak the command corresponding to the function you would like to perform. The second tone indicates the end of the listening period. If the command is understood, its function will run after a brief pause. If the command is not understood, you will be presented with the message, "command not intelligible".
+Below is a list of supported commands and their corresponding functions.</p>
+<div class="table-wrapper"><table><thead><tr><th>Voice Phrase</th><th>Function</th></tr></thead><tbody>
+<tr><td>"Define 'word'"</td><td>Looks up a word in the dictionary</td></tr>
+<tr><td>"Weather"</td><td>Speaks the local weather conditions</td></tr>
+<tr><td>"Battery"</td><td>Opens the battery menu and speaks the battery level</td></tr>
+<tr><td>"WiFi"</td><td>Opens the WiFi menu and shows available networks</td></tr>
+</tbody></table>
+</div>
+<p>Your device will recognize any command containing the command keyword you would like to run. For example, "<em>weather</em>", "get the <em>weather</em>", and "what are my <em>weather</em> conditions now?" will all speak the weather since the "weather" keyword was included in the command.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="how-to-get-an-openai-key"><a class="header" href="#how-to-get-an-openai-key">How to Get an OpenAI Key</a></h2>
+<p>You'll need to generate your own OpenAI key in order to use apps like ChatGPT.
+Go to (https://platform.openai.com/api/)<br />
+create an account, and log in.
+In the top-right corner of the page, use the dropdown menu and select the option to generate a new API key.
+Copy this key to a new text file, save it as ".openAPI_key", and place it in the home directory on the BTSpeak.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="network-file-sharing-help"><a class="header" href="#network-file-sharing-help">Network File Sharing Help</a></h2>
+<p>It's possible to share files with (transfer files to/from) the BTSpeak over the network.
+This is done via the SMB (Server Message Block) or NFS (Network File System) protocol.
+SMB works on many platforms (e.g. Windows, Linux).
+NFS might work on other platforms but is primarily used between Linux systems.</p>
+<p>In the examples below, we'll assume that the host name of your BTSpeak is btspeak50.
+When using any of them, remember to use your BTSpeak's actual name instead.
+To find out your BTSpeak's host name, do the following:</p>
+<ol>
+<li>Use O-Chord to go to the Options menu.</li>
+<li>Select the System menu (shortcut is s).</li>
+<li>Select About This Device (shortcut is d).</li>
+<li>Look for Host Name.</li>
+</ol>
+<p>The first thing you need to do is to ensure that the /Public directory on your BTSpeak has been created.
+This is the location to/from which you'll be transferring files.
+This only needs to be done once, but, if you aren't sure, it won't hurt to do it again.</p>
+<ol>
+<li>Use O-Chord to go to the Options menu.</li>
+<li>Select the System menu (shortcut is s).</li>
+<li>Select the System Administration menu (shortcut is s).</li>
+<li>Select the Advanced System Administration menu (shortcut is a).</li>
+<li>Select the System Maintenance menu (shortcut is m).</li>
+<li>Select Make Third Partition (shortcut is 3).</li>
+</ol>
+<h3 id="accessing-your-btspeak-from-windows"><a class="header" href="#accessing-your-btspeak-from-windows">Accessing your BTSpeak from Windows</a></h3>
+<p>To access your BTSpeak from Windows, you'll need to first ensure that your Windows computer is allowed to use the SMB 1.0 protocol (it's disabled by default).
+To do this:</p>
+<ol>
+<li>Press Windows+R, and type control.</li>
+<li>Select "Programs and Features".</li>
+<li>Select "Turn Windows features on and off".</li>
+<li>Go down to "SMB 1.0".</li>
+<li>If it's disabled then enable it and reboot.</li>
+</ol>
+<p>Now, to access folders on your BTSpeak from your Windows computer, go into the "File Explorer"
+and either click on "Network" (in the pane on the left) or tab over to "Home", type "Network", and press Enter.
+You'll then see a screen listing all of the computers on your network; double-click on your BTSpeak.
+A screen will come up asking you to enter the credentials for connecting to it.
+It wants a username and a password default username is "pi", default password is "blz-tech".
+You'll now see a screen that lists two folders: "pi" (your home folder), and "Public".
+If you right-click on a file while browsing either of these folders, you'll be able to share it, email it, download it, or copy it.
+If you don't see your BTSpeak's "Public" folder then it might not have been created yet - see above for how to do that.</p>
+<h3 id="to-use-smb-on-linux"><a class="header" href="#to-use-smb-on-linux">To use SMB on Linux:</a></h3>
+<p>In the GUI's file browser, click on Other Locations.
+At the bottom of that screen is a place to enter the server name.
+Depending on which DHCP server you're using, you may need to enter:
+either "smb://btspeak50/pi"
+or "smb://btspeak50.local/pi"
+It'll ask for the user's name and password - enter "pi" and its password.</p>
+<p>You can manually mount your BTSpeak's public volume from the Linux command line.
+You'll need to first create a directory to be its mountpoint.
+While this directory can be anywhere, it's usually created under the /mnt directory.
+Let's assume that the mountpoint is "/mnt/btspeak".
+These commands will mount your BTSpeak's public volume:
+mkdir /mnt/btspeak
+mount -t cifs -o username=pi,password=whatever //btspeak50/Public /mnt/btspeak
+If you don't specify the user's name then it'll get it from the $USER environment variable.
+This is usually the user that you're currently logged in as.
+If you don't specify the password then it'll get it from the $PASSWD environment variable.
+If $PASSWD isn't set then it'll prompt for the password.</p>
+<p>If you'd like your BTSpeak's public volume to be mounted automatically each time you reboot your system
+then add this line to your system's "/etc/fstab" file:
+//btspeak50/Public /mnt/btspeak cifs username=pi,password=whatever 0 0</p>
+<p>In both of these cases (manual or automatic mounting), it's a bad idea to put a password in a public place.
+Rather than using the username= and password= mount options, therefore, you should use the credentials= mount option instead.
+It takes the absolute path to a file as its operand.
+That file should, of course, be adequately protected from public scrutiny.
+It's format is:
+username=pi
+password=whatever</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="make-third-partition-help"><a class="header" href="#make-third-partition-help">Make Third Partition Help</a></h2>
+<p>The main thing that the make-third-partition command does is create /Public -
+a directory that can be remotely accessed from a desktop, laptop, phone, tablet, etc
+in order to send files to and/or get files from the BTSpeak.
+The information below may be helpful to you or to your computer IT person when setting up /Public for use.</p>
+<p>The make-third-partition command creates a third partition on the eMMC (internal disk).
+This physical partition is formatted such that it contains a set of logical volumes.
+It can be maintained on a running system, therefore, with Linux's lvm (logical volume management) commands.
+These are usually within the /usr/sbin/ directory, and their names typically begin with
+lv (logical volume), pv (physical volume), and vg (volume group).</p>
+<p>The easiest way to run this command is to go to the Advanced System Administration menu and click on Make Third Partition.
+The command itself needs to be executed as root.
+It performs several steps in order to do its job.
+If any of these steps has already been done then it doesn't redo it.
+It's safe, therefore, to run this command more than just once.
+The steps it performs are:</p>
+<ol>
+<li>Create a third partition on the eMMC.</li>
+<li>Format the partition as an lvm physical volume.</li>
+<li>Create a volume group named "VG_BTSpeak".</li>
+<li>Add the partition to the volume group.</li>
+<li>Create a logical volume named "Public" within the volume group.</li>
+<li>Format the public volume as an ext4 file system labelled "Public".</li>
+<li>Create a mountpoint directory for the public volume at "/Public/".</li>
+<li>Add a line to "/etc/fstab" in order to mount the public volume.</li>
+<li>Mount the public volume.</li>
+<li>Set the ownership and permissions of the public volume.</li>
+<li>Add a line to "/etc/exports" in order to export the public volume via NFS.</li>
+</ol>
+<p>If the size of the eMMC is less than 20GB then the partition starts at 12GB.
+If its size is 20GB or more then the partition starts at 16GB.
+In both cases, it extends to the end of the eMMC.
+Room is left before it so that, if needed, the size of the root file system can be increased.</p>
+<p>The initial size of the public volume is 4 gigabytes.
+Its owning user is set to "nobody", and its owning group is set to "nobody".
+Its permissions are set to read, write, and search for users, group, and others (chmod ugo+rwx).
+Only the user who has created a file or subdirectory within it can remove it (chmod o+t).
+The owning group of the public volume is assigned to every file and subdirectory created within it (chmod g+s).</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="desktop-navigation-help"><a class="header" href="#desktop-navigation-help">Desktop Navigation Help</a></h2>
+<p>The chords used to navigate the BTSpeak Desktop are listed below.<br />
+These bindings assume that the Mate session manager is being used.</p>
+<p>The PC keyboard key combination for each binding is also listed (within parentheses) for those who are familiar with them.
+The Super key, used in some of the bindings, might not be familiar to some - it's commonly also known by other names such as the Windows or Command key.</p>
+<ul>
+<li>Switching between Desktop and Tablet mode:
+<ul>
+<li>1-2-3-4-5-6-7-Chord: switch to Tablet mode (Control + Alt + F1)</li>
+<li>1-2-3-4-5-6-8-Chord: switch to Desktop mode (Control + Alt + F7)</li>
+</ul>
+</li>
+<li>Opening commonly-used windows:
+<ul>
+<li>O-Chord: open the Main (or Start) menu (Alt + F1)</li>
+<li>R-Chord: open the Run prompt (Alt + F2)</li>
+<li>T-Chord: open a new terminal (Control + Alt + T)</li>
+<li>M-Chord: open the menu bar of the current application (F10)</li>
+<li>M-7-Chord: open the context menu of the current application (Shift + F10)</li>
+<li>M-8-Chord: open the context menu of the current window (Alt + Space)</li>
+</ul>
+</li>
+<li>Moving the screen cursor:
+<ul>
+<li>3-Chord: move left one character (Left-Arrow)</li>
+<li>6-Chord: move right one character (Right-Arrow)</li>
+<li>2-Chord: move left one word (Control + Left-Arrow)</li>
+<li>5-Chord: move right one word (Control + Right-Arrow)</li>
+<li>1-Chord: move up one line (Up-Arrow)</li>
+<li>4-Chord: move down one line (Down-Arrow)</li>
+<li>1-3-Chord: move to beginning of the current line (Home)</li>
+<li>4-6-Chord: move to end of the current line (End)</li>
+<li>1-2-3-Chord: move to the top of the document (Control + Home)</li>
+<li>4-5-6-Chord: move to the end of the document (Control + End)</li>
+<li>2-3-Chord: move up one screen (Page-Up)</li>
+<li>5-6-Chord: move down one screen (Page-Down)</li>
+</ul>
+</li>
+<li>Extending the current text selection (dot 7 added to the corresponding screen cursor movement bindings):
+<ul>
+<li>3-7-Chord: select the previous character (Shift + Left-Arrow)</li>
+<li>6-7-Chord: select the next character (Shift + Right-Arrow)</li>
+<li>2-7-Chord: select the previous word (Shift + Control + Left-Arrow)</li>
+<li>5-7-Chord: select the next word (Shift + Control + Right-Arrow)</li>
+<li>1-7-Chord: select the previous line (Shift + Up-Arrow)</li>
+<li>4-7-Chord: select the next line (Shift + Down-Arrow)</li>
+<li>1-3-7-Chord: select to the beginning of the current line (Shift + Home)</li>
+<li>4-6-7-Chord: select to the end of the current line (Shift + End)</li>
+<li>1-2-3-7-Chord: select to the top of the document (Shift + Control + Home)</li>
+<li>4-5-6-7-Chord: select to the end of the document (Shift + Control + End)</li>
+<li>2-3-7-Chord: select the previous screen (Shift + Page-Up)</li>
+<li>5-6-7-Chord: select the next screen (Shift + Page-Down)</li>
+</ul>
+</li>
+<li>Moving between controls, windows, and panels (Tab key bindings):
+<ul>
+<li>1-2-Chord: go to the previous control within the current window (Shift + Tab)</li>
+<li>4-5-Chord: go to the next control within the current window (Tab)</li>
+<li>1-2-7-Chord: go to the previous document within the current application (Shift + Control + Tab)</li>
+<li>4-5-7-Chord: go to the next document within the current application (Control + Tab)</li>
+<li>1-2-8-Chord: go to the top-level window of the previous application (Shift + Alt + Tab)</li>
+<li>4-5-8-Chord: go to the top-level window of the next application (Alt + Tab)</li>
+<li>1-2-7-8-Chord: go to the previous panel on the desktop (Shift + Control + Alt + Tab)</li>
+<li>4-5-7-8-Chord: go to the next panel on the desktop (Control + Alt + Tab)</li>
+</ul>
+</li>
+<li>Closing windows:
+<ul>
+<li>Z-Chord: cancel an action or close a dialog (Escape)</li>
+<li>Z-7-Chord: close the current application (Alt + F4)</li>
+<li>Z-8-Chord: close the active child window of the current application (Control + W)</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="desktop-review-help"><a class="header" href="#desktop-review-help">Desktop Review Help</a></h2>
+<p>Orca is the screen reader used by the BTSpeak to review what's on its desktop.
+These bindings assume that Orca's laptop layout is being used and that the Orca Modifier key is Caps Lock.
+<em>Do NOT change these settings.</em></p>
+<ul>
+<li>Reviewing by character:
+<ul>
+<li>3-6-Chord: speak the current character
+<ul>
+<li>double-press speaks the current character phonetically</li>
+<li>triple-press speaks the current character's hexadecimal Unicode value</li>
+<li>long press speaks the character's attributes (color, etc)</li>
+</ul>
+</li>
+<li>3-6-7-Chord: move the review cursor to the previous character</li>
+<li>3-6-8-Chord: move the review cursor to the next character
+<ul>
+<li>long press moves the review cursor to the last character of the current line</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reviewing by word:
+<ul>
+<li>2-5-Chord: speak the current word
+<ul>
+<li>double-press spells the current word</li>
+<li>triple-press spells the current word phonetically</li>
+</ul>
+</li>
+<li>2-5-7-Chord: move the review cursor to the previous word
+<ul>
+<li>long press moves the review cursor to the word above the current word</li>
+</ul>
+</li>
+<li>2-5-8-Chord: move the review cursor to the next word
+<ul>
+<li>long press moves the review cursor to the word below the current word
+Reviewing by line:</li>
+</ul>
+</li>
+<li>1-4-Chord: speak the current line
+<ul>
+<li>double-press spells the current line</li>
+<li>triple-press spells the current line phonetically</li>
+<li>long press speaks the currently selected text or item(s)</li>
+</ul>
+</li>
+<li>1-4-7-Chord: move the review cursor to the previous line
+<ul>
+<li>long press moves the review cursor to the first line</li>
+</ul>
+</li>
+<li>1-4-8-Chord: move the review cursor to the next line
+<ul>
+<li>long press moves the review cursor to the last line</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Where Am I:
+<ul>
+<li>1-5-6-7-Chord (wh): speak basic Where Am I information
+<ul>
+<li>double-press speaks detailed Where Am I information</li>
+</ul>
+</li>
+<li>1-5-6-8-Chord (wh): speak the title bar
+<ul>
+<li>double-press speaks the status bar</li>
+</ul>
+</li>
+<li>1-5-6-7-8-Chord (wh): describe the current item or widget
+Continuous reading:</li>
+<li>1-2-4-5-6-Chord (er): say below - speak the rest of the text
+<ul>
+<li>double-press reviews the current dialog or window</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finding text:
+<ul>
+<li>F-Chord: open Orca's find dialog - prompts for new search text</li>
+<li>F-7-Chord: find the previous occurrence of the current search text</li>
+<li>F-8-Chord: find the next occurrence of the current search text</li>
+</ul>
+</li>
+<li>Changing Orca settings:
+<ul>
+<li>O-7-Chord: open the general Orca preferences dialog</li>
+<li>O-8-Chord: open the Orca preferences dialog for the focused application</li>
+</ul>
+</li>
+<li>Pointer (mouse) emulation:
+<ul>
+<li>P-Chord: route the pointer to the current item</li>
+<li>P-7-Chord: perform a left mouse click on the current item</li>
+<li>P-8-Chord: perform a right mouse click on the current item</li>
+<li>P-7-8-Chord: move the focus into or away from the current mouse-over (web only)</li>
+</ul>
+</li>
+<li>Current time and date:
+<ul>
+<li>T-7-Chord: speak the current time
+<ul>
+<li>double-press speaks the current date</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Toggling review settings (dots 7 and 8 added to easy-to-remember letters):
+<ul>
+<li>F-7-8-Chord: toggle flat review mode on/off</li>
+<li>N-7-8-Chord: toggle the navigation mode between browse and focus
+<ul>
+<li>double-press enables sticky focus mode</li>
+<li>triple-press enables sticky browse mode</li>
+</ul>
+</li>
+<li>S-7-8-Chord: toggle structural navigation mode on/off</li>
+<li>T-7-8-Chord: toggle the table reading mode between cell and row</li>
+<li>V-7-8-Chord: toggle the verbosity between brief and full</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><p>PC Keyboard Emulation Help</p>
+<p>When running third-party applications, such as those outside of the BTSpeak user interface, it's important
+to know how to emulate the special keys of a PC keyboard.
+This is how:</p>
+<ul>
+<li>Enter: 8</li>
+<li>Backspace: 7 (or B-Chord)</li>
+<li>Tab: 4-5-Chord</li>
+<li>Arrow Left: 3-Chord</li>
+<li>Arrow Right: 6-Chord</li>
+<li>Arrow Up: 1-Chord</li>
+<li>Arrow Down: 4-Chord</li>
+<li>Page Up: 2-3-Chord</li>
+<li>Page Down: 5-6-Chord</li>
+<li>Home: 1-3-Chord</li>
+<li>End: 4-6-Chord</li>
+<li>Insert: 3-5-Chord (lower i)</li>
+<li>Delete: 2-5-6-Chord (lower d)</li>
+<li>Escape: 2-6-Chord (lower e)</li>
+</ul>
+<p>To type an uppercase letter, add Dot 7 to its lowercase representation.
+To type a control character, add both Dot 7 and Dot 8 to its lowercase representation.</p>
+<p>Sticky modifier keys are activated by pressing 8-Chord + one of the other seven dot keys (1-7):</p>
+<ul>
+<li>1: the GUI modifier (aka Windows, Command)</li>
+<li>2: the Left Alt modifier (aka Meta)</li>
+<li>3: the Control modifier</li>
+<li>4: the Shift modifier</li>
+<li>5: the Right Alt modifier (aka AltGr)</li>
+<li>6: the Uppercase modifier</li>
+<li>7: reset all of the sticky modifiers</li>
+</ul>
+<p>Pressing a modifier once enables it for just the next typed character; the BTSpeak will say "once".
+Pressing it again (so, twice) locks it so that it applies to every character typed from then on; the BTSpeak will say "lock".
+Pressing it yet again (so, thrice) resets it so that it no longer applies; the BTSpeak will say "off".</p>
+<p>If a modifier has been enabled for just the next character then
+it's automatically reset after a few seconds if nothing else is typed; the BTSpeak will say "modifiers reset".</p>
+<p>X-Chord, the legacy binding for the Control modifier, is supported.
+It works exactly the same as 3-8-Chord (described above).</p>
+<p>U-Chord, the legacy binding for the Uppercase modifier, is supported.
+It works exactly the same as 6-8-Chord (described above).</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="vibration-patterns-help"><a class="header" href="#vibration-patterns-help">Vibration Patterns Help</a></h2>
+<p>If the BTSpeak is off then you'll feel a short vibration
+when you press its power button to let you know that it has started booting.
+You can let go of the power button as soon as you feel this vibration.
+If you don't feel this vibration then the battery is probably empty
+and you'll need to charge it.</p>
+<p>If the BTSpeak is on then these are its vibration patterns and their meanings:</p>
+<ul>
+<li>1 short: power button pressed</li>
+<li>2 shorts: battery transition from okay to low</li>
+<li>3 shorts: battery is empty</li>
+<li>1 medium: power button held - shutdown</li>
+<li>2 Mediums: battery transition from low to okay</li>
+<li>3 Mediums: battery is fully charged</li>
+<li>medium short: power button released - sleeping</li>
+<li>short medium: power button released - awake</li>
+<li>1 long: shutdown complete - power off</li>
+</ul>
+<p>When a long operation, e.g. a system upgrade or connecting to a Wi-Fi network,
+is being performed then the vibrator is pulsed once per second as an indicator
+to let you know that the BTSpeak is still alive and well.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="menu-file-help"><a class="header" href="#menu-file-help">Menu File Help</a></h2>
+<p>Menu files have the ".menu" extension and are in the "/BTSpeak/Menus/" directory.<br />
+Blank lines are ignored.<br />
+If the first non-space character on a line is # then that line is a comment and is ignored.<br />
+The rest of the lines are item definitions, except for the first one which is the menu's title.</p>
+<p>An item definition has the following general format ([brackets] means optional):
+[shortcut=]label [#comment]: action [argument ...]</p>
+<p>The label is what's displayed on the screen.
+If it contains a # then the rest of the text is a comment and is rendered within parentheses.</p>
+<p>The shortcut for an item defaults to the first character of its label (case doesn't matter).
+This can be overridden by adding the optional shortcut= prefix (where shortcut is a single character).
+Explicitly specifying the shortcut is necessary when two or more labels start with the same character.
+The cursor is placed on the shortcut of the currently selected menu item so that 3-6-Chord will say what it is.
+If there's no shortcut then the cursor is placed on a space.</p>
+<p>The following actions are supported:</p>
+<ul>
+<li>menu name
+<ul>
+<li>The "menu" action enters the named menu recursively.</li>
+<li>Leaving it returns to the current menu.</li>
+</ul>
+</li>
+<li>run command [argument ...]
+<ul>
+<li>The "run" action executes the specified host command and waits for it to finish.</li>
+<li>You won't see its standard error while it's executing.</li>
+<li>If it finishes with a nonzero exit status then you'll be asked if you'd like to view the errors.</li>
+<li>The default response to this prompt is "no".</li>
+</ul>
+</li>
+<li>execute command [argument ...]
+<ul>
+<li>The "execute" action executes the specified host command and waits for it to finish.</li>
+<li>Standard error isn't intercepted.</li>
+<li>This action must be used for host commands that are interactive, e.g. for shells and editors.</li>
+</ul>
+</li>
+<li>exit
+<ul>
+<li>The "exit" action forces all of the active menus to be immediately exited.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="rescue-mode-help"><a class="header" href="#rescue-mode-help">Rescue Mode Help</a></h2>
+<p>Rescue mode invokes an interactive shell in which basic system maintenance can be performed.
+The file systems are mounted and only the base system services are running.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="reset-button-help"><a class="header" href="#reset-button-help">Reset Button Help</a></h2>
+<p>There's a Reset button on the bottom.
+It should never need to be used but is still there just in case.</p>
+<p>There are two holes on the bottom, under the left and right edges of the Dot 7 key.
+Both of these are very hard to feel because they're very small.
+They're about a quarter of an inch in from the front.</p>
+<p>The hole toward the left gives access to the Reset button.
+You can use an unbent paper clip to press it.
+Before pressing it, make sure you first carefully feel for the center of the button.
+Pressing it cuts off power to the PC board.</p>
+<p>The hole toward the right gives access to the USB-Boot button,
+which lets the unit be booted as a memory device (kind of like a USB stick).
+Doing this requires special software - rpiboot - to be on your computer.
+It's how we flash the Raspbian operating system onto the BTSpeak.
+This button must be held while the BTSpeak's power is turned on.
+You can google this if it interests you.
+One web page that describes this process is:
+https://docs.kubesail.com/guides/pibox/rpiboot/</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="tests-menu-help"><a class="header" href="#tests-menu-help">Tests Menu Help</a></h2>
+<p>The Tests menu can be entered from either the Advanced System Administration or the Boot menu - Z-Chord exits it.</p>
+<h3 id="menu-navigation-5"><a class="header" href="#menu-navigation-5">Menu Navigation</a></h3>
+<p>These letters can be typed to directly perform actions:</p>
+<ul>
+<li>A: test the ADC voltages</li>
+<li>I: test the I2C buss</li>
+<li>K: test the keyboard keys</li>
+<li>M: test the memory size</li>
+<li>P: test the public volume mountpoint</li>
+<li>S: test SD card detection</li>
+<li>T: perform all of the tests</li>
+<li>U: test USB stick detection</li>
+<li>V: test the vibrator</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="march-5-2024-bt-speak-system-upgrade--posted-by-bt-development-team"><a class="header" href="#march-5-2024-bt-speak-system-upgrade--posted-by-bt-development-team">March 5, 2024 BT Speak® System Upgrade | Posted By: BT Development Team</a></h2>
+<p>It's time for another upgrade!</p>
+<h3 id="bt-speak-and-bt-speak-pro"><a class="header" href="#bt-speak-and-bt-speak-pro">BT Speak® and BT Speak® Pro</a></h3>
+<ul>
+<li>A new System Upgrade Notification monitor has been added It will manifest itself to you in two ways.
+<ul>
+<li>First, you'll hear a background announcement that "a new system upgrade is available" each time it detects that more changes have been posted. Since it runs on an intentionally somewhat randomized schedule from roughly once to twice per day, this announcement may occur when you aren't there to hear it.</li>
+<li>You'll also hear an announcement that "a system upgrade is available", in between the "BTSpeak ready" and the "file is open" messages, each time you boot your BTSpeak if there are any changes that you haven't yet applied.</li>
+</ul>
+</li>
+<li>When using the File Browser, each file's position in the listing of the current directory is now announced. For example, if you're currently on the third file of a listing that contains a hundred files then you'll hear the phrase "3 of 100" after it's name.</li>
+<li>A set of file listing filters has been added to the File Browser. The default filter is, of course, no filter. You can change the filter that's currently being applied by typing the letter F when using the File Browser. The filters that are currently provided are:
+<ul>
+<li>A: list audio files</li>
+<li>B: list braille files</li>
+<li>D: list directories</li>
+<li>F: list all files</li>
+<li>I: list image files</li>
+<li>N: no filter (the default)</li>
+<li>T: list text files</li>
+<li>V: list video files</li>
+</ul>
+</li>
+<li>Files can now be translated from one format to another. This can be done by typing the letter T from within either the File Browser or the File Management menu. If you do so from the latter then you'll be prompted for the file's name.
+<ul>
+<li>A file with any of these extensions can be translated:
+<ul>
+<li>.brf: Formatted Braille</li>
+<li>.brl: Braille</li>
+<li>.csv: Comma Separated Values</li>
+<li>.docx: Word Document</li>
+<li>.epub: Electronic Publication</li>
+<li>.html: Hypertext Markup</li>
+<li>.odt: Open Document</li>
+<li>.txt: Plain Text</li>
+</ul>
+</li>
+<li>A file can be translated to any of the following formats:
+<ul>
+<li>B: Braille (.brl)</li>
+<li>E: Electronic Publication (.epub)</li>
+<li>H: Hypertext Markup (.html)</li>
+<li>O: Open Document (.odt)</li>
+<li>P: Portable Document (.pdf)</li>
+<li>R: Rich Text (.rtf)</li>
+<li>T: Plain Text (.txt)</li>
+<li>W: Word Document (.docx)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When the date is pasted, the name of the month, rather than its number, is now used. This has already been the case for a date when it's spoken.</li>
+<li>When a date is spoken or pasted, the order of its components (year, month, day) is now the one preferred by the current locale. For example, a user in the United States will hear the month before the day whereas a user located in the United Kingdom will hear the day before the month.</li>
+<li>BRF files, such as documents which have been downloaded from book providers, are now spoken properly by the editor. Rendering them used to sound more or less like gibberish. For the curious, this was because BRF files use the range of ASCII braille characters that add Dot7 to the base characters, and seeing Dot7 made no sense to the six-dot braille back-translator that we're using.</li>
+<li>Quoting of the file's name within the deletion confirmation prompt has been removed because DECtalk was speaking those quotes, thus making the actual file name rather difficult to understand.</li>
+<li>As DECtalk users will know all too well, the name of this very product - BTSpeak - wasn't being pronounced properly. As a general fix for this kind of problem, we've implemented a scheme that most modern text-to-speech engines are using, i.e. to consider an uppercase letter, even when it's in the middle of a word, to be the start of a new word. This is also referred to as “camel case.”
+A set of word pronunciation dictionaries has also been added so that we can deal with words that text-to-speech engines get wrong. While the eventual goal is to make this user-configurable, for the time being we've hard-coded the use of the basic dictionary.</li>
+<li>DECtalk speech, when not set to the default rate, now sounds much more natural. This is because we're now using its new Samples per Frame feature rather then just setting the raw rate.</li>
+<li>The View Password Hint action has been added to the Device Customization menu. You are now asked for a hint regarding what your new password is when you change your password. When shipped, the hint is initially set to tell you what the default password is.</li>
+<li>When an important underlying host command failed, you were asked if you wanted to have a look at a log of that failure. The File Viewer is now used to present that log to you so that you can much more easily navigate your way through it. You'll now also be offered the opportunity to send a copy of that log to BT Speak Support.</li>
+</ul>
+<h3 id="bt-speak-pro"><a class="header" href="#bt-speak-pro">BT Speak® Pro</a></h3>
+<ul>
+<li>The desktop's screen saver has been disabled so that you won't be unexpectedly prompted for your login password if Desktop mode has been idle for a few minutes.</li>
+<li>Starting Desktop mode no longer restarts the booting indicator (those regular vibrations that you feel while the BTSpeak is booting).</li>
+<li>Starting Desktop mode no longer makes it impossible to disable the keyboard while the BTSpeak is asleep.</li>
+</ul>
+<h2 id="february-19-2024-bt-speak-system-upgrade--posted-by-bt-development-team"><a class="header" href="#february-19-2024-bt-speak-system-upgrade--posted-by-bt-development-team">February 19, 2024 BT Speak® System Upgrade | Posted By: BT Development Team</a></h2>
+<p>We are pleased to announce another upgrade with the following new features and improvements:</p>
+<h3 id="bt-speak-and-bt-speak-pro-1"><a class="header" href="#bt-speak-and-bt-speak-pro-1">BT Speak® and BT Speak® Pro</a></h3>
+<ul>
+<li>The editor now honors your key echo setting (controlled by E within the Speech Settings menu). It used to be that whenever you typed a character it'd always be spoken. Now, if you've turned key echo off, you'll no longer hear what you're typing. Note that word echo, i.e. the speaking of completed words, when in the editor is still not implemented. We'll be having a look at this as part of a future update.</li>
+<li>We have improved ER-Chord (i.e. 1-2-4-5-6-Chord) within the editor, which speaks the text from the cursor's current position through the end of the file. The five-second delay between lines has been removed. Pressing any key will interrupt the speech. While the underlying mechanism requires that cursor be moved as each line is enqueued for speaking, it's always returned to its original position afterwards. This happens quickly enough that you may not even notice the cursor motion.</li>
+<li>A booting indicator has been added. You'll feel a repeating short vibration, roughly once per second, while BT Speak® is booting. This is the same indicator that's already being used while a long action is being performed in other BT Speak utilities, such as System Upgrade.</li>
+<li>A Wi-Fi monitor has been added. You'll hear "Wi-Fi disconnected" when your connection drops, and you'll hear "Wi-Fi connected to [access point name]" when it's regained.</li>
+<li>The File Viewer has been enhanced. You'll now hear a rejection beep each time you type a character. 1-3-Chord and 4-6-Chord used to go to the beginning and end of the file - they now go to the beginning and end of the current line. 1-2-3-Chord and 4-5-6-Chord now go to the beginning and end of the file, respectively. These chord changes make the File Viewer consistent with how the editor uses them.</li>
+<li>Action confirmations, i.e. prompts that require you to answer either "yes" or "no", now clearly tell you what the default is, i.e. what'll happen if you just press Enter.</li>
+<li>The Rename action within the File Browser and File Manager no longer prefills the new name prompt with the old name, so that it could be edited.</li>
+<li>A new submenu of the System Menu, called About This Device has been added with the shortcut D. Rather than having to select each setting individually in order to check it, all of the settings are shown, within a single display, via the File Viewer. This means, among other things, that you can now navigate a setting's value by character in order to more accurately know exactly what it is.</li>
+<li>A Customize This Device submenu of the System Administration menu has been implemented with shortcut C. Among other options, this menu contains Change Owner's Name, allowing you assign your own name to BT Speak®. This will, for example, enable our Tech Support staff to more easily know who has sent us a log file. We recommend that you enter your first name followed by your last name and use normal capitalization (e.g. Deane Blazie).</li>
+<li>The Wi-Fi submenu of the Options menu (O-Chord) is now much simpler. In addition to just letting you add a new network, now also lets you switch to another network.</li>
+<li>BTRadio now synchronizes with your Pandora account, giving you access to its library of &gt;800 music stations. If you already have a Pandora account, BTRadio will load your existing playlist. If you don't have a Pandora account, you can <a href="https://www.pandora.com/account/register">sign-up for a free account.</a> If you are starting with a brand new Pandora account, your BTRadio playlist will initially be empty. Therefore, begin BTRadio using its Add Stations to PlayList option to build a playlist with your favorite music genres.</li>
+</ul>
+<h3 id="bt-speak-pro-1"><a class="header" href="#bt-speak-pro-1">BT Speak® Pro</a></h3>
+<p>Your BT Speak® Pro now includes Pidgin on its desktop! This application handles several instant messaging protocols. </p>
+<h2 id="january-28-2024-bt-speak-system-upgrade--posted-by-bt-development-team"><a class="header" href="#january-28-2024-bt-speak-system-upgrade--posted-by-bt-development-team">January 28, 2024 BT Speak® System Upgrade | Posted By: BT Development Team</a></h2>
+<p>Today we released another software upgrade for BT Speak® and BT Speak® Pro! The upgrade is available for download from the System Administration Menu. To get there: from the options menu, navigate to System, select System Administration Menu, and choose Upgrade the System. This upgrade offers new features and performance improvements:</p>
+<h3 id="bt-speak-and-bt-speak-pro-2"><a class="header" href="#bt-speak-and-bt-speak-pro-2">BT Speak® and BT Speak® Pro</a></h3>
+<ul>
+<li>System Services has been added to the Advanced System Administration menu.
+<ul>
+<li>It allows you to either enable or disable three services (so far). They are:
+<ul>
+<li>SSH (Secure Shell),</li>
+<li>SMB (File Sharing)</li>
+<li>NFS (Network File System).</li>
+</ul>
+</li>
+<li>They've been selected because each gives others remote access to your BT Speak® via the network. You have the option to manually disable whichever of them you'd rather not have running on your BT Speak®.</li>
+</ul>
+</li>
+<li>We have introduced shortcuts within the Advanced System Administration menu. They are as follows:
+<ul>
+<li>The shortcut to invoke an interactive shell is now I. This aligns it with the same action within the Boot menu. It used to be S, which now enters the new System Services menu.</li>
+<li>The shortcut to view open issues is now O. It used to be I, which now invokes an interactive shell.</li>
+</ul>
+</li>
+<li>Enhanced technical support: After viewing a log file, you'll now be asked if you'd like to send a copy of it to BT Speak® Support. The default answer is "no", but, if you answer "yes", we'll receive it via email. This is a great way to get your technical support concerns addressed by our team. Also, you'll no longer need to find some way to retrieve your own copy of it.</li>
+<li>If your BT Speak® encounters a problem during system upgrade, you'll now be told exactly which step had the problem, if you'd like to send a copy of that step's log to BT Speak® Support, and an option to retry the upgrade.</li>
+<li>A symbolic link named "Public", which points to the "/Public/" directory, has been added to the home directory.</li>
+<li>Viewing a log file now uses the File Viewer. This means that you can now navigate around log file contents by word or character.</li>
+<li>Minor bug fixes and performance enhancements.</li>
+</ul>
+<h2 id="january-13-2024-bt-speak-system-upgrade--posted-by-bt-development-team"><a class="header" href="#january-13-2024-bt-speak-system-upgrade--posted-by-bt-development-team">January 13, 2024 BT Speak® System Upgrade | Posted By: BT Development Team</a></h2>
+<p>Earlier today, we released software upgrades for BT Speak® and BT Speak® Pro, which are available for download from the System Administration Menu.</p>
+<h3 id="bt-speak-and-bt-speak-pro-3"><a class="header" href="#bt-speak-and-bt-speak-pro-3">BT Speak® and BT Speak® Pro</a></h3>
+<ul>
+<li>The Boot menu has been added. Get into it by holding the Power button while BT Speak® boots. It's main purpose is that you can boot into it when the normal user interface isn't working. From it, you can do things like perform a system upgrade, invoke an interactive shell, run hardware tests, switch to a low-level system maintenance shell, etc.</li>
+<li>The Where Am I command - WH-Chord (dots 1-5-6) - when invoked while in the editor now also tells you which file is open.</li>
+<li>When in the editor, 1-3-Chord and 4-6-Chord, which go to the beginning and end of the current line respectively, now speaks what the new current character is.</li>
+<li>Three new hot chords have been added that work everywhere.
+<ul>
+<li>D-8-Chord says the current date</li>
+<li>T-8-Chord says the current time</li>
+<li>ST-8-Chord (dots 3-4) says the current battery status. </li>
+</ul>
+</li>
+<li>Dates are now spoken using the weekday and month names in the format: weekday name, numeric day of the month, month name, and numeric year. So, for example, today's date is spoken as "Friday, 19 January, 2024". We intentionally separated the two numeric components (the day of the month, and the year) from one another in order to make each much more easy to hear.</li>
+<li>Selecting Date, Time, or Battery from the Options menu now speaks the corresponding value immediately. These actions no longer temporarily leave the editor in order to be performed.</li>
+<li>The Paste menu now allows you to paste the most recent calculator result, the most recent Gregorian date calculation, and the most recent Stopwatch reading.</li>
+<li>The Paste menu now pastes in braille when you're editing a .brl or a .brf (braille scripted) file.</li>
+<li>Introduced small bug fixes to the Battery Status and Power Status features</li>
+</ul>
+<p>###BT Speak® Pro</p>
+<p>Desktop mode - only available on Pro units - was designed and developed. If you're curious about how to use it, you can check out the Desktop Navigation and the Desktop Review help files.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

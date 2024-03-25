@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Getting Started Guide - BTSpeak Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="gettingStarted.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started Guide</a></li><li class="chapter-item expanded "><a href="welcome-screen.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="product-description.html"><strong aria-hidden="true">3.</strong> Product Description</a></li><li class="chapter-item expanded "><a href="command-summary.html"><strong aria-hidden="true">4.</strong> Command Summary</a></li><li class="chapter-item expanded "><a href="options-menu.html"><strong aria-hidden="true">5.</strong> Options Menu</a></li><li class="chapter-item expanded "><a href="file-management.html"><strong aria-hidden="true">6.</strong> File Management</a></li><li class="chapter-item expanded "><a href="speech-settings.html"><strong aria-hidden="true">7.</strong> Speech Settings</a></li><li class="chapter-item expanded "><a href="DECtalk.html"><strong aria-hidden="true">8.</strong> DECtalk</a></li><li class="chapter-item expanded "><a href="power-button.html"><strong aria-hidden="true">9.</strong> Power Button</a></li><li class="chapter-item expanded "><a href="review-mode.html"><strong aria-hidden="true">10.</strong> Review Mode</a></li><li class="chapter-item expanded "><a href="BTSpeak-editor.html"><strong aria-hidden="true">11.</strong> Working with the Editor</a></li><li class="chapter-item expanded "><a href="delete-menu.html"><strong aria-hidden="true">12.</strong> Delete Menu</a></li><li class="chapter-item expanded "><a href="navigation-menu.html"><strong aria-hidden="true">13.</strong> Navigation Menu</a></li><li class="chapter-item expanded "><a href="paste-menu.html"><strong aria-hidden="true">14.</strong> Paste Menu</a></li><li class="chapter-item expanded "><a href="editor-details.html"><strong aria-hidden="true">15.</strong> Editor: Technical Details</a></li><li class="chapter-item expanded "><a href="calculator.html"><strong aria-hidden="true">16.</strong> The Scientific Calculator</a></li><li class="chapter-item expanded "><a href="gregorian-date-calculator.html"><strong aria-hidden="true">17.</strong> gregorian date calculator</a></li><li class="chapter-item expanded "><a href="BTRadio.html"><strong aria-hidden="true">18.</strong> BT Radio</a></li><li class="chapter-item expanded "><a href="stopwatch.html"><strong aria-hidden="true">19.</strong> Stopwatch</a></li><li class="chapter-item expanded "><a href="voiceCommands.html"><strong aria-hidden="true">20.</strong> Voice Commands</a></li><li class="chapter-item expanded "><a href="OpenAI-key.html"><strong aria-hidden="true">21.</strong> OpenAI API Key</a></li><li class="chapter-item expanded "><a href="network-file-sharing.html"><strong aria-hidden="true">22.</strong> Network File Sharing</a></li><li class="chapter-item expanded "><a href="make-third-partition.html"><strong aria-hidden="true">23.</strong> Creating the Public Partition for Network File Sharing</a></li><li class="chapter-item expanded "><a href="desktop-navigation.html"><strong aria-hidden="true">24.</strong> Desktop Navigation - Pro Units</a></li><li class="chapter-item expanded "><a href="desktop-review.html"><strong aria-hidden="true">25.</strong> Desktop Review - Pro Units</a></li><li class="chapter-item expanded "><a href="keyboard-emulation.html"><strong aria-hidden="true">26.</strong> Keyboard Emulation</a></li><li class="chapter-item expanded "><a href="vibration-patterns.html"><strong aria-hidden="true">27.</strong> Vibration Patterns</a></li><li class="chapter-item expanded "><a href="menu-file.html"><strong aria-hidden="true">28.</strong> Menu Customization Files</a></li><li class="chapter-item expanded "><a href="rescue-mode.html"><strong aria-hidden="true">29.</strong> Rescue Mode</a></li><li class="chapter-item expanded "><a href="reset-button.html"><strong aria-hidden="true">30.</strong> Reset Button</a></li><li class="chapter-item expanded "><a href="tests-menu.html"><strong aria-hidden="true">31.</strong> Tests Menu</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">32.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BTSpeak Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="getting-started-with-your-bt-speak"><a class="header" href="#getting-started-with-your-bt-speak">Getting Started With Your BT Speak®</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Congratulations on your purchase of the BT Speak® from <a href="https://blazietech.com">Blazie Technologies, LLC.</a> The BT Speak® is a pocket computer designed for the visually impaired. It provides a standard 8-dot Braille keyboard for input and synthetic speech for output. The BT Speak® offers a collection of applications including an editor, scientific calculator, a dictionary, a weather app, and many others. The BT Speak® Pro offers all of these features but it also includes a full desktop mode with access to applications such as Google Chrome (Chromium), Firefox, Thunderbird and the LibreOffice suite. The device has a USB C port, a micro SD card slot and an HDMI port. Bluetooth and Wi-Fi are also included. The BT Speak® has a rechargeable battery that lasts for approximately ten hours. However, the amount of battery time will vary depending on how you use the device.</p>
+<h2 id="whats-in-the-box"><a class="header" href="#whats-in-the-box">What’s in the Box?</a></h2>
+<p>Your package should contain the following items:</p>
+<ul>
+<li>BTSpeak device</li>
+<li>USB C wall charger (C to C cable not included)</li>
+<li>USB Type-C to 3.5mm (1/8Inch) headphone adapter</li>
+</ul>
+<h2 id="physical-description"><a class="header" href="#physical-description">Physical Description</a></h2>
+<p>The BTSpeak is a very compact device. Its length and width are comparable to newer smartphones such as the iPhone 14 and 15, and its depth is roughly the equivalent of two phones stacked on top of one another. For proper orientation, place the unit on a flat surface and ensure the side with the ports is facing away from you. The bottom row of three buttons on the face of the unit should be closest to you. With proper placement out of the way, let us now explore the orientation of the unit.</p>
+<h3 id="the-back-edge"><a class="header" href="#the-back-edge">The Back Edge</a></h3>
+<p>Along the back edge of the device are three ports. From left to right the first port is a mini-HDMI connector. This is used to connect the BT Speak® to a TV or a computer monitor. Moving to the right the next port is a standard USB C port which allows you to connect the device to a power supply, USB headphones, external storage and other compatible accessories. The final port on this edge is a micro-SD card slot that can accept micro SD cards up to 1TB.</p>
+<h3 id="the-face-of-the-unit"><a class="header" href="#the-face-of-the-unit">The Face of the Unit</a></h3>
+<p>The face of the BT Speak® is mostly taken up with the 8-dot Braille keyboard. From left to right you will find Dot 3, Dot 2, Dot 1, Dot 4, Dot 5, and Dot 6. Below these keys are Dot 7, the spacebar, and Dot 8. You might notice that the space bar is slightly larger than the dot 7 and 8 keys. The remaining space on the top of the device contains a pair of small stereo speakers along with a microphone.</p>
+<h3 id="the-power-button"><a class="header" href="#the-power-button">The Power Button</a></h3>
+<p>The power button is located near the front of the right side and is recessed between two bumps. Note that even though the bumps feel like buttons, they are not. Rather, they guard against accidental presses of the power button. You’ll want to move your finger between those two bumps in order to locate and activate the power button.</p>
+<h2 id="getting-up-and-running"><a class="header" href="#getting-up-and-running">Getting Up and Running</a></h2>
+<h3 id="powering-on"><a class="header" href="#powering-on">Powering On</a></h3>
+<p>If the BT Speak® is off, briefly pressing the power button will cause it to activate and start the boot process.</p>
+<p>You should feel a short vibration almost immediately after you press the power button, at which point you can release it.<br />
+If you don't feel or hear anything this likely means that the battery needs to be charged.</p>
+<h3 id="putting-the-device-to-sleep"><a class="header" href="#putting-the-device-to-sleep">Putting the Device to Sleep</a></h3>
+<p>When you press the power button while the device is powered on, you'll feel a short vibration and your BT Speak® will announce, “sleeping.” This puts the device in a low power mode, very similar to locking a cell phone. Briefly press the power button again to wake up the device. You’ll feel a short vibration, after which your BT Speak® will announce, “awake.”</p>
+<h3 id="powering-down"><a class="header" href="#powering-down">Powering Down</a></h3>
+<p>If you press and hold the power button for three seconds, you'll feel a longer vibration and the BT Speak® will shut down. The device confirms this by announcing, “shutting down.”</p>
+<h3 id="using-chord-commands"><a class="header" href="#using-chord-commands">Using Chord Commands</a></h3>
+<p>Many BT Speak® commands use what are called "chords." A chord is a command where you press a letter or another group of keys along with the space bar. For example, when you want to press an O-Chord to open the Options menu you would press the letter O (dots 1-3-5) along with the space bar. Some chords make use of the dot 7 or dot 8 keys. For example, Z-7-Chord means that you would press the letter Z (dots 1-3-5-6) combined with dot 7 and the Space bar.</p>
+<h3 id="adjusting-speech"><a class="header" href="#adjusting-speech">Adjusting Speech</a></h3>
+<p>You may wish to adjust the speech settings when you first receive your unit. There are a number of speech settings that can be adjusted to your liking.</p>
+<h4 id="the-speech-settings-menu"><a class="header" href="#the-speech-settings-menu">The Speech Settings Menu</a></h4>
+<p>You can easily adjust the volume, speed and pitch of the voice via a quick Speech Settings menu. To access this menu, press <em>S-chord</em>. Your BT Speak® will say “Speech Settings.” Once inside this menu, press the following keys to adjust the voice.</p>
+<div class="table-wrapper"><table><thead><tr><th>Function</th><th>Command</th></tr></thead><tbody>
+<tr><td>Lower the Volume</td><td>Dot 1</td></tr>
+<tr><td>Raise the Volume</td><td>Dot 4</td></tr>
+<tr><td>Decrease the Rate</td><td>Dot 2</td></tr>
+<tr><td>Increase the Rate</td><td>Dot 5</td></tr>
+<tr><td>Lower the Pitch</td><td>Dot 3</td></tr>
+<tr><td>Raise the Pitch</td><td>Dot 6</td></tr>
+<tr><td>toggle key echo on or off</td><td>E</td></tr>
+<tr><td>Toggle word echo on or off</td><td>W</td></tr>
+<tr><td>Key echo off</td><td>E with dot 7</td></tr>
+<tr><td>Key echo on</td><td>E with dot 8</td></tr>
+<tr><td>Word echo off</td><td>W with dot 7</td></tr>
+<tr><td>Word echo on</td><td>W with dot 8</td></tr>
+</tbody></table>
+</div>
+<p>A series of ascending tones indicates that key echo or word echo is enabled. Descending tones indicate that it has been disabled.<br />
+Warning: in the current update these tones are quite loud. We are aware of this and are working on a fix. Press <em>Z-chord</em> to exit the Speech Settings menu.</p>
+<h4 id="changing-the-speech-engine"><a class="header" href="#changing-the-speech-engine">Changing the Speech Engine</a></h4>
+<p>The BT Speak® has two speech engines, DEC-Talk from Human Voice, LLC and eSpeak. Here are the steps for switching from one speech engine to another.</p>
+<ol>
+<li>Press <em>O-chord</em> for the Options menu (More on this in the next section).</li>
+<li>Press <em>S</em> for the System menu.</li>
+<li>Press <em>S</em> for the System Administration menu.</li>
+<li>Press <em>S</em> for the Change Settings menu.</li>
+<li>Press <em>dot 4-chord</em> to move to “Text to Speech Engine” and press enter.</li>
+<li>From this menu you can press dot 1-chord or dot 4-chord to move to either DEC-Talk or eSpeak. When you get to the choice that you want press enter.</li>
+</ol>
+<h3 id="the-options-menu"><a class="header" href="#the-options-menu">The Options Menu</a></h3>
+<p>Press <em>O-chord</em> to open the Options menu. Think of this as the gateway for opening all of the applications and other services available on your device. Press <em>dot 4-chord</em> to move down to the next choice and <em>dot 1-chord</em> to move to the previous choice. You can also press the spacebar to move forward and dot 7 to move back. <em>Dots 1-2-3-chord</em> moves to the first menu item and <em>dots 4-5-6-chord</em> moves to the last menu item. Pressing <em>dot 8</em> activates the selected choice. Some items, such as “System”, will open a submenu of additional choices if you press enter while pointing to them. Most options in this menu have a shortcut key to open them. Press <em>dots 3-6 chord</em> to hear the shortcut key for the option you’re pointing to. For example, if you’re pointing to “Time” pressing 3-6 chord will announce the letter T. If you’re pointing to “date” pressing 3-6 chord announces the letter D. This means that you could press O-chord followed by the letter T to hear the time or D to hear the date. Pressing <em>Z-chord</em> functions like the Escape key. It will take you back one level or menu.</p>
+<h3 id="getting-help"><a class="header" href="#getting-help">Getting Help</a></h3>
+<p>The BT Speak® provides context-sensitive help. You can press <em>H-chord</em> From anywhere to open a help file describing information and commands based on where you are at present. As an example, if you’re working in the editor, pressing H-chord gives you specific help about using the editor. If you’d like to browse a list of all of the available help files press <em>O-chord</em> followed by the letter <em>H</em>. You will be presented with a menu of topics. You can navigate through the list of help topics by pressing dot 4-chord to move to the next title and dot 1-chord to move to the previous title. When you locate the help topic you want to read, press dot 8. Press Z-chord to close the help file and return to where you were when you opened it.</p>
+<h3 id="connecting-to-wi-fi"><a class="header" href="#connecting-to-wi-fi">Connecting to Wi-Fi</a></h3>
+<p>After adjusting some essential settings such as speech, one of the first things you’ll want to do is to connect your BT Speak® to your Wi-Fi network. This is important for several reasons, not the least of which is to install the latest software update. To connect to your Wi-Fi network, do the following:</p>
+<ol>
+<li>Press <em>O-chord</em> to enter the Options menu.</li>
+<li>Press dot 4-chord, or just the space bar, until you move to the Wi-Fi menu and press dot 8 which is the enter key. You can also use the single-letter shortcut, which is the letter <em>W</em>.</li>
+<li>Press the letter <em>A</em>. This is a shortcut to add a network. Your BT Speak® will announce, “discovering visible Wi-Fi Networks.” The device may issue a few short vibrations while it searches for available networks.</li>
+<li>You will now be in a list of available networks that you can connect to. Your BT Speak® will announce the first network in the list. You can press dot 4-chord to move forward through the list of networks. Dot 1-chord navigates backward through the list. Pressing <em>dots 1-4-chord</em> speaks the current item (network name) that you’re pointing to. When you find the network that you want to join, press <em>dot 8</em> by itself. Remember, we use dot 8 as the enter key.</li>
+<li>Once you select the network, the BT Speak® says, “password”. You will feel short vibration pulses while it waits for you to enter your password. While entering your password, you will not hear the characters as you type them. Instead, you will hear “asterisk” for every character that you enter. This is standard practice and is done to ensure security so that others who may be nearby won’t know what you’re typing.
+<ol>
+<li>Note that passwords must be entered using Computer Braille symbols, rather than contracted Braille.</li>
+<li>As such, uppercase letters are controlled by pressing <em>U-chord</em>. Press U-chord once to capitalize the next letter only. Press U-chord twice to “lock” the keyboard in upper case mode. This is helpful if your password has several capital letters in a row. Pressing U-chord a third time unlocks uppercase mode.</li>
+<li>Alternatively, you can press and hold <em>dot 7</em> while you type each character in order to capitalize it.</li>
+</ol>
+</li>
+<li>Once you have finished entering your password, press enter (dot 8). If you’ve entered your password correctly, your device will confirm this by telling you that you are now connected to your network.</li>
+</ol>
+<h3 id="upgrading-your-device"><a class="header" href="#upgrading-your-device">Upgrading Your Device</a></h3>
+<p>Blazie Technologies regularly provides updates for your BT Speak®. These updates improve existing features as well as adding new features and capabilities to your device. You are strongly encouraged to ensure your battery capacity is over 50% before upgrading. We also recommend plugging in your unit during the upgrade process to ensure against battery-related interruptions. To upgrade your device, perform the following steps.</p>
+<ol>
+<li>Press <em>O-chord</em> for the Options menu.</li>
+<li>Press <em>S</em> for the System menu.</li>
+<li>Press <em>S</em> for the System Administration menu.</li>
+<li>Press <em>U</em> for Upgrade. You’ll be asked if you’re sure you want to do this.</li>
+<li>Press the letter <em>Y</em> for yes.</li>
+<li>Press <em>dot 8</em> for enter. The upgrade will begin. Your unit will issue a short vibration about once every second and you’ll also hear status messages during this process, such as “installing audio drivers.”</li>
+</ol>
+<p>After the upgrade has completed your unit will reboot. This means that it will power down and then restart. Wait until you hear the BT Speak Ready message followed by the name of the currently open file, at which point you’ll be ready to continue using your device.</p>
+<h2 id="introduction-to-the-editor"><a class="header" href="#introduction-to-the-editor">Introduction to the Editor</a></h2>
+<p>The editor allows you to create, open and edit documents. It accepts plain text, HTML and Braille files. It is available on the BT Speak® and the BT Speak® Pro models.</p>
+<h3 id="creating-a-file"><a class="header" href="#creating-a-file">Creating a File</a></h3>
+<p>To create a file:</p>
+<ol>
+<li>Press <em>O-chord</em> to open the Options menu.</li>
+<li>Navigate with <em>dot 4-chord</em> until you get to “File Browser” and press dot 8 (for enter.) Alternatively, you can press the letter <em>F</em> and you will immediately be in the file browser.</li>
+<li>Press the letter <em>C</em> which tells the device that you want to create a new file. The BT Speak® announces, “enter file name”</li>
+<li>Type the title of the file that you wish to create. File names must be written using Computer Braille. As such, entering a dot will require you to use <em>dots 4-6</em>. Adding a .brl or .brf extension will allow you to write and edit your file using contracted Braille. An example might be journal.brl.</li>
+<li>Press enter <em>(dot 8)</em> when you are satisfied with your filename. The file browser will close and you will be in the new file that you created.</li>
+</ol>
+<h3 id="navigating-in-a-file"><a class="header" href="#navigating-in-a-file">Navigating in a File</a></h3>
+<p>The following commands can be used to navigate in a file.</p>
+<div class="table-wrapper"><table><thead><tr><th>Function</th><th>Command</th></tr></thead><tbody>
+<tr><td>Move to previous line</td><td>Dot 1-chord</td></tr>
+<tr><td>Move to next line</td><td>Dot 4-chord</td></tr>
+<tr><td>Speak the current line</td><td>Dots 1-4 chord</td></tr>
+<tr><td>Move to previous word</td><td>Dot 2-chord</td></tr>
+<tr><td>Move to next word</td><td>Dot 5-chord</td></tr>
+<tr><td>Speak the current word</td><td>Dots 2-5 chord</td></tr>
+<tr><td>Move to previous character</td><td>Dot 3-chord</td></tr>
+<tr><td>Move to next character</td><td>Dot 6-chord</td></tr>
+<tr><td>Speak current character</td><td>Dots 3-6-chord</td></tr>
+<tr><td>Go to the beginning of the file</td><td>Dots 1-2-3-chord</td></tr>
+<tr><td>Go to the end of the file</td><td>Dots 4-5-6-chord</td></tr>
+</tbody></table>
+</div>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>We hope that this guide has helped you to get up and running with your BT Speak®. If you need assistance or have an idea for a feature, please don’t hesitate to reach out to us. You can contact us by phone at (772) 214-1616. Our support email address is support@blazie.net. We hope you enjoy your BT Speak® and that it provides you with years of excellent service.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="welcome-screen.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="welcome-screen.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
