@@ -1,1 +1,1 @@
-Next Generation Manual - Detailed Readme Coming Soon
+Next Generation BTSpeak Manual - Detailed Readme Coming Soon
