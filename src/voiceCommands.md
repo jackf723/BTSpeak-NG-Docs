@@ -1,4 +1,4 @@
-# Voice Commands
+## Voice Commands
 
 Your BTSpeak allows you to run several functions using your voice. 
 Current supported functions include:

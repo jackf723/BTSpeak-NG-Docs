@@ -1,8 +1,9 @@
-## March 5, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
+## Change Log
+### March 5, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
 
 It's time for another upgrade!  
 
-### BT Speak® and BT Speak® Pro
+#### BT Speak® and BT Speak® Pro
 
 * A new System Upgrade Notification monitor has been added It will manifest itself to you in two ways.
     * First, you'll hear a background announcement that "a new system upgrade is available" each time it detects that more changes have been posted. Since it runs on an intentionally somewhat randomized schedule from roughly once to twice per day, this announcement may occur when you aren't there to hear it.
@@ -46,17 +47,17 @@ A set of word pronunciation dictionaries has also been added so that we can deal
 * The View Password Hint action has been added to the Device Customization menu. You are now asked for a hint regarding what your new password is when you change your password. When shipped, the hint is initially set to tell you what the default password is.
 * When an important underlying host command failed, you were asked if you wanted to have a look at a log of that failure. The File Viewer is now used to present that log to you so that you can much more easily navigate your way through it. You'll now also be offered the opportunity to send a copy of that log to BT Speak Support.
 
-### BT Speak® Pro
+#### BT Speak® Pro
 
 * The desktop's screen saver has been disabled so that you won't be unexpectedly prompted for your login password if Desktop mode has been idle for a few minutes.
 * Starting Desktop mode no longer restarts the booting indicator (those regular vibrations that you feel while the BTSpeak is booting).
 * Starting Desktop mode no longer makes it impossible to disable the keyboard while the BTSpeak is asleep.
 
-## February 19, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
+### February 19, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
 
 We are pleased to announce another upgrade with the following new features and improvements:
 
-### BT Speak® and BT Speak® Pro
+#### BT Speak® and BT Speak® Pro
 
 * The editor now honors your key echo setting (controlled by E within the Speech Settings menu). It used to be that whenever you typed a character it'd always be spoken. Now, if you've turned key echo off, you'll no longer hear what you're typing. Note that word echo, i.e. the speaking of completed words, when in the editor is still not implemented. We'll be having a look at this as part of a future update.
 * We have improved ER-Chord (i.e. 1-2-4-5-6-Chord) within the editor, which speaks the text from the cursor's current position through the end of the file. The five-second delay between lines has been removed. Pressing any key will interrupt the speech. While the underlying mechanism requires that cursor be moved as each line is enqueued for speaking, it's always returned to its original position afterwards. This happens quickly enough that you may not even notice the cursor motion.
@@ -70,15 +71,15 @@ We are pleased to announce another upgrade with the following new features and i
 * The Wi-Fi submenu of the Options menu (O-Chord) is now much simpler. In addition to just letting you add a new network, now also lets you switch to another network.
 * BTRadio now synchronizes with your Pandora account, giving you access to its library of >800 music stations. If you already have a Pandora account, BTRadio will load your existing playlist. If you don't have a Pandora account, you can [sign-up for a free account.](https://www.pandora.com/account/register) If you are starting with a brand new Pandora account, your BTRadio playlist will initially be empty. Therefore, begin BTRadio using its Add Stations to PlayList option to build a playlist with your favorite music genres.
 
-### BT Speak® Pro
+#### BT Speak® Pro
 
 Your BT Speak® Pro now includes Pidgin on its desktop! This application handles several instant messaging protocols. 
 
-## January 28, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
+### January 28, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
 
 Today we released another software upgrade for BT Speak® and BT Speak® Pro! The upgrade is available for download from the System Administration Menu. To get there: from the options menu, navigate to System, select System Administration Menu, and choose Upgrade the System. This upgrade offers new features and performance improvements:
 
-### BT Speak® and BT Speak® Pro
+#### BT Speak® and BT Speak® Pro
 
 * System Services has been added to the Advanced System Administration menu.
     * It allows you to either enable or disable three services (so far). They are:
@@ -95,11 +96,11 @@ Today we released another software upgrade for BT Speak® and BT Speak® Pro! Th
 * Viewing a log file now uses the File Viewer. This means that you can now navigate around log file contents by word or character.
 * Minor bug fixes and performance enhancements.
 
-## January 13, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
+### January 13, 2024 BT Speak® System Upgrade | Posted By: BT Development Team
 
 Earlier today, we released software upgrades for BT Speak® and BT Speak® Pro, which are available for download from the System Administration Menu.
 
-### BT Speak® and BT Speak® Pro
+#### BT Speak® and BT Speak® Pro
 
 * The Boot menu has been added. Get into it by holding the Power button while BT Speak® boots. It's main purpose is that you can boot into it when the normal user interface isn't working. From it, you can do things like perform a system upgrade, invoke an interactive shell, run hardware tests, switch to a low-level system maintenance shell, etc.
 * The Where Am I command - WH-Chord (dots 1-5-6) - when invoked while in the editor now also tells you which file is open.
@@ -114,6 +115,6 @@ Earlier today, we released software upgrades for BT Speak® and BT Speak® Pro, 
 * The Paste menu now pastes in braille when you're editing a .brl or a .brf (braille scripted) file.
 * Introduced small bug fixes to the Battery Status and Power Status features
 
-###BT Speak® Pro
+####BT Speak® Pro
 
 Desktop mode - only available on Pro units - was designed and developed. If you're curious about how to use it, you can check out the Desktop Navigation and the Desktop Review help files.
