@@ -17,6 +17,6 @@ These letters can be typed to directly perform actions:
   * S: System menu
   * T: current time
   * W: connect to a Wi-Fi network
-  * # (dots 3-4-5-6): Stopwatch
+  * \# (dots 3-4-5-6): Stopwatch
 
 
